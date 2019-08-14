@@ -1,0 +1,38 @@
+<div
+  class="input-group mb-3 selection-form"
+  *ngIf="showDropdown"
+>
+  <select
+    class="custom-select"
+    (change)="updateFocusedOption($event.target.value)"
+  >
+    <option [value]="" *ngIf="nothingInFocus">-- Select a Technology --</option>
+    <option
+      *ngFor="let option of optionsForDisplay"
+      [value]="option[valueField]"
+    >
+      {{ option[textField] }}
+    </option>
+  </select>
+  <div class="input-group-append">
+    <button
+      class="btn btn-outline-secondary"
+      type="button"
+      (click)="selectFocusedOption()"
+      [disabled]="nothingInFocus"
+    >
+      Add
+    </button>
+  </div>
+</div>
+
+<div class="selected-list">
+  <ul class="list-group" *ngIf="showList">
+    <li class="list-group-item" *ngFor="let option of selectedOptions">
+      {{ option[textField] }}
+      <button class="btn btn-dark" (click)="removeSelectedOption(option)">
+        X
+      </button>
+    </li>
+  </ul>
+</div>

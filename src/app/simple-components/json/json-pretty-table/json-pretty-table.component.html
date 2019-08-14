@@ -1,0 +1,12 @@
+<ng-container *ngIf="hasData">
+  <table class="table table-striped">
+    <tbody>
+      <ng-container *ngFor="let item of data | keyvalue">
+        <tr *ngIf="showData(item)">
+          <th scope="row">{{ item.key }}</th>
+          <td>{{ item.value }}</td>
+        </tr>
+      </ng-container>
+    </tbody>
+  </table>
+</ng-container>

@@ -1,0 +1,14 @@
+<div
+  class="list-group-item list-group-item-action flex-column align-items-start mb-2"
+>
+  <div class="d-flex w-100 justify-content-between lead text-center">
+    <h5>{{ title }}</h5>
+  </div>
+  <p *ngIf="subtitle">{{ subtitle }}</p>
+  <hr />
+  <ul *ngIf="details" class="mb-0">
+    <li *ngFor="let detail of details">
+      {{ detail }}
+    </li>
+  </ul>
+</div>

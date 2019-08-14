@@ -1,0 +1,11 @@
+<!-- Button trigger modal -->
+<button
+  type="button"
+  class="btn btn-primary"
+  data-toggle="modal"
+  [attr.data-target]="'#' + modalBoxId"
+  [class.btn-danger]="danger"
+  [class.btn-block]="block"
+>
+  <ng-content></ng-content>
+</button>
