@@ -1,5 +1,5 @@
 {
-  "name": "angular-base",
+  "name": "overton-portfolio",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "build-for-prod": "ng build --prod --base-href=/projects/angular-base/",
+    "build-for-prod": "ng build --prod --base-href=/projects/overton-portfolio/",
     "prod-deploy": "scp -r dist/* callanan@ftp.callananconcepts.club:/home1/callanan/public_html/projects/",
     "full-deploy": "npm run build-for-prod && npm run prod-deploy"
   },

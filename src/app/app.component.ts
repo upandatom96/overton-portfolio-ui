@@ -8,6 +8,6 @@ import { faLock } from "@fortawesome/free-solid-svg-icons";
   styleUrls: ["./app.component.scss"]
 })
 export class AppComponent {
-  title = "angular-base";
+  title = "overton-portfolio";
   faLock = faLock;
 }
