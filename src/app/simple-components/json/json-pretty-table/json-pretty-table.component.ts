@@ -1,5 +1,5 @@
 import { Component, Input } from "@angular/core";
-import { BooleanUtilities } from 'src/app/utilities/boolean.utilities';
+import { BooleanUtilities } from "src/app/utilities/boolean.utilities";
 
 @Component({
   selector: "app-json-pretty-table",

@@ -1,6 +1,6 @@
 import { Component, Input, Output } from "@angular/core";
 import { EventEmitter } from "@angular/core";
-import { BooleanUtilities } from 'src/app/utilities/boolean.utilities';
+import { BooleanUtilities } from "src/app/utilities/boolean.utilities";
 
 @Component({
   selector: "app-select-multiple",
