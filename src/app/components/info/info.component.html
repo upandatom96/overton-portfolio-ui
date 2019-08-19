@@ -34,7 +34,7 @@
         </p>
       </div>
     </div>
-    <div id="status-row" class="row" *ngIf="showStatus">
+    <div id="status-row" class="row" *ngIf="showStatus; else loading">
       <div class="col-md-12">
         <p>
           Backend Services Status:
@@ -49,3 +49,7 @@
     </div>
   </div>
 </section>
+
+<ng-template #loading>
+  <app-loading [message]="'Checking services...'"></app-loading>
+</ng-template>
