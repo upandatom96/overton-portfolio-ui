@@ -2,10 +2,16 @@ import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 import { HomeComponent } from "./components/home/home.component";
 import { InfoComponent } from "./components/info/info.component";
+import { AboutComponent } from "./components/about/about.component";
+import { ResumeComponent } from "./components/resume/resume.component";
+import { MediaComponent } from "./components/media/media.component";
 
 const routes: Routes = [
   { path: "", component: HomeComponent },
   { path: "info", component: InfoComponent },
+  { path: "about", component: AboutComponent },
+  { path: "resume", component: ResumeComponent },
+  { path: "media", component: MediaComponent },
   { path: "**", redirectTo: "" },
 ];
 
