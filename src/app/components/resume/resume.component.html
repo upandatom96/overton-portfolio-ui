@@ -1,3 +1,71 @@
-<p>
-  resume works!
-</p>
+<header id="resume-header" class="bg-custom-yellow pb-2">
+  <div class="container">
+    <div class="row">
+      <h1 class="mx-auto display-1 text-center header-text">Andrew Overton</h1>
+    </div>
+    <div
+      class="lead row justify-content-around d-none d-md-flex body-text bigger-text"
+    >
+      <span>Tenor</span> <span>~</span> <span>5'11"</span> <span>~</span>
+      <span>andrewgregoryoverton@gmail.com</span> <span>~</span>
+      <span>(515) 402-8422</span>
+    </div>
+    <div
+      class="lead row d-md-none d-sm-block text-center body-text bigger-text"
+    >
+      <p>Tenor</p>
+      <p>5'11"</p>
+      <p>andrewgregoryoverton@gmail.com</p>
+      <p>(515) 402-8422</p>
+    </div>
+  </div>
+</header>
+
+<section id="resume-sections" class="py-4 bg-custom-yellow">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 text-center">
+        <i class="fa fa-film fa-3x mb-2"></i>
+        <h3 class="display-4 header-text">Actor</h3>
+        <p class="body-text">
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+        </p>
+      </div>
+      <div class="col-md-4 text-center">
+        <i class="fa fa-microphone fa-3x mb-2"></i>
+        <h3 class="display-4 header-text">Singer</h3>
+        <p class="body-text">
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+        </p>
+      </div>
+      <div class="col-md-4 text-center">
+        <i class="fa fa-music fa-3x mb-2"></i>
+        <h3 class="display-4 header-text">Dancer</h3>
+        <p class="body-text">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="download-resume" class="bg-dark py-3 text-white">
+  <div class="container">
+    <div class="row justify-content-around">
+      <a class="btn btn-outline-light">
+        <i class="fa fa-cloud"></i> Download Resume
+      </a>
+      <a class="btn btn-outline-light">
+        <i class="fa fa-camera"></i> Download Headshots
+      </a>
+    </div>
+  </div>
+</section>
+
+<div id="resume-accordion">
+  <app-credits></app-credits>
+
+  <app-training></app-training>
+
+  <app-skills></app-skills>
+</div>
