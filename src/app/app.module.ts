@@ -9,9 +9,9 @@ import { InfoComponent } from "./components/info/info.component";
 import { NavbarComponent } from "./components/navbar/navbar.component";
 import { FooterComponent } from "./components/footer/footer.component";
 import { AppRoutingModule } from "./app-routing.module";
-import { HeaderComponent } from './components/home/header/header.component';
-import { ShowsComponent } from './components/home/shows/shows.component';
-import { GalleryComponent } from './components/home/gallery/gallery.component';
+import { HeaderComponent } from "./components/home/header/header.component";
+import { ShowsComponent } from "./components/home/shows/shows.component";
+import { GalleryComponent } from "./components/home/gallery/gallery.component";
 
 @NgModule({
   declarations: [

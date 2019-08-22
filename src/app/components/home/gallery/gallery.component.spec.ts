@@ -1,8 +1,8 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { GalleryComponent } from './gallery.component';
+import { GalleryComponent } from "./gallery.component";
 
-describe('GalleryComponent', () => {
+describe("GalleryComponent", () => {
   let component: GalleryComponent;
   let fixture: ComponentFixture<GalleryComponent>;
 
@@ -19,7 +19,7 @@ describe('GalleryComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });
