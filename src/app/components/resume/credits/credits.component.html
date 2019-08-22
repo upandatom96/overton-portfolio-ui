@@ -1,3 +1,30 @@
-<p>
-  credits works!
-</p>
+<section id="credit-section" class="bg-custom-blue pb-3">
+  <div class="container">
+    <div class="row">
+      <a
+        class="py-3 mx-auto display-2 header-text"
+        href="#collapse-credits"
+        data-toggle="collapse"
+        >Credits</a
+      >
+    </div>
+    <div
+      id="collapse-credits"
+      class="row collapse"
+      data-parent="#resume-accordion"
+      *ngFor="let credit of credits"
+    >
+      <div class="card col-12 text-center body-text">
+        <div class="card-body">
+          <h5 class="card-title display-4">
+            {{ credit.title }} - {{ credit.role }}
+          </h5>
+          <p class="card-text card-subtitle mb-2 text-muted">
+            {{ credit.theatre }}
+          </p>
+          <p class="card-text">Directed by {{ credit.director }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
