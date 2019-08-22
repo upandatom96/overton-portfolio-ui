@@ -1,33 +1,40 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-  <a class="navbar-brand" href="#">Overton Portfolio</a>
-  <button
-    class="navbar-toggler"
-    type="button"
-    data-toggle="collapse"
-    data-target="#navbarText"
-    aria-controls="navbarText"
-    aria-expanded="false"
-    aria-label="Toggle navigation"
-  >
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarText">
-    <ul class="navbar-nav ml-auto">
-      <li *ngFor="let link of links" class="nav-item">
-        <a
-          *ngIf="link.routerLink"
-          class="nav-link"
-          [routerLink]="link.routerLink"
-          >{{ link.text }}</a
-        >
-        <a
-          *ngIf="link.href"
-          class="nav-link"
-          [href]="link.href"
-          target="_blank"
-          >{{ link.text }}</a
-        >
-      </li>
-    </ul>
+<nav
+  id="main-nav"
+  class="navbar navbar-expand-md bg-custom-red py-4 header-text"
+>
+  <div class="container">
+    <a routerLink="/" class="navbar-brand">
+      <h3 class="display-3 d-inline align-middle text-dark callout">
+        Andrew Overton
+      </h3>
+    </a>
+    <p id="slogan" class="d-none d-lg-inline align-middle my-auto">
+      Actor / Singer / Dancer
+    </p>
+    <button
+      class="navbar-toggler"
+      data-toggle="collapse"
+      data-target="#navbar-collapse"
+    >
+      <span class="navbar-toggler-icon">
+        <i class="fa fa-2x fa-bars"> </i>
+      </span>
+    </button>
+    <div id="navbar-collapse" class="collapse navbar-collapse">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a routerLink="/" class="nav-link text-dark">Home</a>
+        </li>
+        <li class="nav-item text-dark">
+          <a routerLink="about" class="nav-link text-dark">About</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="resume" class="nav-link text-dark">Resume</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="media" class="nav-link text-dark">Media</a>
+        </li>
+      </ul>
+    </div>
   </div>
 </nav>
