@@ -15,9 +15,9 @@ import { GalleryComponent } from "./components/home/gallery/gallery.component";
 import { AboutComponent } from "./components/about/about.component";
 import { ResumeComponent } from "./components/resume/resume.component";
 import { MediaComponent } from "./components/media/media.component";
-import { CreditsComponent } from './components/resume/credits/credits.component';
-import { SkillsComponent } from './components/resume/skills/skills.component';
-import { TrainingComponent } from './components/resume/training/training.component';
+import { CreditsComponent } from "./components/resume/credits/credits.component";
+import { SkillsComponent } from "./components/resume/skills/skills.component";
+import { TrainingComponent } from "./components/resume/training/training.component";
 
 @NgModule({
   declarations: [

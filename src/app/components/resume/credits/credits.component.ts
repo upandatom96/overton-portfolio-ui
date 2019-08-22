@@ -1,10 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import { Credit } from 'src/app/models/Credit.model';
+import { Component, OnInit } from "@angular/core";
+import { Credit } from "src/app/models/Credit.model";
 
 @Component({
-  selector: 'app-credits',
-  templateUrl: './credits.component.html',
-  styleUrls: ['./credits.component.scss']
+  selector: "app-credits",
+  templateUrl: "./credits.component.html",
+  styleUrls: ["./credits.component.scss"]
 })
 export class CreditsComponent implements OnInit {
   credits: Credit[] = [
