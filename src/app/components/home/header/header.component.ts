@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { faMicrophone, faFilm, faMusic } from "@fortawesome/free-solid-svg-icons";
 
 @Component({
   selector: 'app-header',
@@ -6,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+  public faFilm = faFilm;
+  public faMicrophone = faMicrophone;
+  public faMusic = faMusic;
 
   constructor() { }
 

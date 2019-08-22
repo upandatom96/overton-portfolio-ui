@@ -1,3 +1,59 @@
-<p>
-  header works!
-</p>
+<header id="main-header">
+  <div class="row no-gutters bg-custom-blue">
+    <div id="main-image" class="col-lg-4 col-md-5">
+      <img src="assets/img/andrew-2.jpg" alt="Andrew" class="img img-fluid" />
+    </div>
+
+    <div id="main-details" class="col-lg-8 col-md-7">
+      <div
+        class="d-flex flex-column justify-content-between align-items-stretch"
+      >
+        <section id="main-title" class="p-4">
+          <div
+            class="d-flex flex-row justify-content-between align-items-center"
+          >
+            <h1 class="display-2 header-text mx-auto">Andrew Overton</h1>
+          </div>
+        </section>
+
+        <section id="main-icons" class="py-4 bg-custom-yellow">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-4 text-center">
+                <fa-icon [icon]="faFilm" class="mb-2" size="3x"></fa-icon>
+                <h3 class="display-4 body-text">Actor</h3>
+              </div>
+              <div class="col-md-4 text-center">
+                <fa-icon [icon]="faMicrophone" class="mb-2" size="3x"></fa-icon>
+                <h3 class="display-4 body-text">Singer</h3>
+              </div>
+              <div class="col-md-4 text-center">
+                <fa-icon [icon]="faMusic" class="mb-2" size="3x"></fa-icon>
+                <h3 class="display-4 body-text">Dancer</h3>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="main-bio" class="py-2 px-2 align-self-stretch">
+          <div id="bio">
+            <div class="container">
+              <div class="row lead body-text px-2 bigger-text">
+                <p>
+                  Welcome! Andrew Overton is an actor based out of Baltimore,
+                  Maryland.
+                </p>
+                <p>
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Dicta magni excepturi sapiente? Delectus, ipsum, enim eveniet
+                  pariatur, culpa molestias rem veniam hic aspernatur sapiente
+                  provident!
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+</header>
