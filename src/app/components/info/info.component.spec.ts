@@ -3,6 +3,7 @@ import { HttpClientTestingModule } from "@angular/common/http/testing";
 import { InfoComponent } from "./info.component";
 import { HealthValues } from "src/app/enums/health-enums";
 import { UnitTestUtilities } from "src/unit-testing/unit-test.utilities";
+import { SimpleComponentsModule } from "src/app/simple-components/simple-components.module";
 
 describe("InfoComponent", () => {
   let component: InfoComponent;
@@ -11,7 +12,7 @@ describe("InfoComponent", () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [InfoComponent],
-      imports: [HttpClientTestingModule]
+      imports: [HttpClientTestingModule, SimpleComponentsModule]
     })
       .compileComponents();
   }));
