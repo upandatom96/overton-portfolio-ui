@@ -1,10 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import { SingingSample } from 'src/app/models/SingingSample.model';
+import { Component, OnInit } from "@angular/core";
+import { SingingSample } from "src/app/models/SingingSample.model";
 
 @Component({
-  selector: 'app-singing-samples',
-  templateUrl: './singing-samples.component.html',
-  styleUrls: ['./singing-samples.component.scss']
+  selector: "app-singing-samples",
+  templateUrl: "./singing-samples.component.html",
+  styleUrls: ["./singing-samples.component.scss"]
 })
 export class SingingSamplesComponent implements OnInit {
   public singingSampleList: SingingSample[] = [
