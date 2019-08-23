@@ -12,6 +12,7 @@ import { LoadingComponent } from "./loading/loading.component";
 import { ModalBoxBasicComponent } from "./modal/modal-box-basic/modal-box-basic.component";
 import { ModalTriggerButtonComponent } from "./modal/modal-trigger-button/modal-trigger-button.component";
 import { ModalTriggerLinkComponent } from "./modal/modal-trigger-link/modal-trigger-link.component";
+import { SafePipe } from './pipes/SafeUrlPipe';
 
 @NgModule({
   exports: [
@@ -27,6 +28,7 @@ import { ModalTriggerLinkComponent } from "./modal/modal-trigger-link/modal-trig
     ModalBoxBasicComponent,
     ModalTriggerButtonComponent,
     ModalTriggerLinkComponent,
+    SafePipe
   ],
   declarations: [
     ErrorsReportComponent,
@@ -40,6 +42,7 @@ import { ModalTriggerLinkComponent } from "./modal/modal-trigger-link/modal-trig
     ModalBoxBasicComponent,
     ModalTriggerButtonComponent,
     ModalTriggerLinkComponent,
+    SafePipe
   ],
   imports: [
     CommonModule,
