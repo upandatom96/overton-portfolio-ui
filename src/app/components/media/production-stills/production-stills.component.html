@@ -10,34 +10,11 @@
     </div>
     <div class="row justify-content-between">
       <div class="row no-gutters">
-        <div class="col-md-3">
-          <img
-            src="https://unsplash.it/600.jpg?image=252"
-            alt=""
-            class="img-fluid"
-          />
-        </div>
-        <div class="col-md-3">
-          <img
-            src="https://unsplash.it/600.jpg?image=253"
-            alt=""
-            class="img-fluid"
-          />
-        </div>
-        <div class="col-md-3">
-          <img
-            src="https://unsplash.it/600.jpg?image=254"
-            alt=""
-            class="img-fluid"
-          />
-        </div>
-        <div class="col-md-3">
-          <img
-            src="https://unsplash.it/600.jpg?image=255"
-            alt=""
-            class="img-fluid"
-          />
-        </div>
+        <ng-container *ngFor="let still of productionStillList">
+          <div class="col-md-3">
+            <img [src]="still" alt="" class="img-fluid" />
+          </div>
+        </ng-container>
       </div>
     </div>
   </div>
