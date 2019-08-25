@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
 import { CreditsComponent } from "./credits.component";
+import { SimpleComponentsModule } from "src/app/simple-components/simple-components.module";
 
 describe("CreditsComponent", () => {
   let component: CreditsComponent;
@@ -8,9 +9,10 @@ describe("CreditsComponent", () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CreditsComponent ]
+      declarations: [CreditsComponent],
+      imports: [SimpleComponentsModule]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

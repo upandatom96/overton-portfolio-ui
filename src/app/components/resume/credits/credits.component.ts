@@ -7,7 +7,7 @@ import { Credit } from "src/app/models/Credit.model";
   styleUrls: ["./credits.component.scss"]
 })
 export class CreditsComponent implements OnInit {
-  credits: Credit[] = [
+  creditList: Credit[] = [
     {
       title: "Happy Days",
       role: "Elvis Presley / Jumpy Malachi",
@@ -20,12 +20,6 @@ export class CreditsComponent implements OnInit {
       theatre: "Woodstock Playhouse",
       director: "Andrew Greenwood"
     },
-    {
-      title: "Title",
-      role: "Role",
-      theatre: "Theatre",
-      director: "Director"
-    }
   ];
 
   constructor() { }
