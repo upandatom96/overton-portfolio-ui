@@ -17,7 +17,6 @@ import { ResumeComponent } from "./components/resume/resume.component";
 import { MediaComponent } from "./components/media/media.component";
 import { CreditsComponent } from "./components/resume/credits/credits.component";
 import { SkillsComponent } from "./components/resume/skills/skills.component";
-import { TrainingComponent } from "./components/resume/training/training.component";
 import { SingingSamplesComponent } from "./components/media/singing-samples/singing-samples.component";
 import { ProductionStillsComponent } from "./components/media/production-stills/production-stills.component";
 
@@ -36,7 +35,6 @@ import { ProductionStillsComponent } from "./components/media/production-stills/
     MediaComponent,
     CreditsComponent,
     SkillsComponent,
-    TrainingComponent,
     SingingSamplesComponent,
     ProductionStillsComponent
   ],

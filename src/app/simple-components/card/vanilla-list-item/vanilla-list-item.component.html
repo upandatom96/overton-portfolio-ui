@@ -9,6 +9,16 @@
   <p class="mb-1" *ngIf="details">
     {{ details }}
   </p>
+  <ng-container *ngIf="list">
+    <p *ngIf="listTitle">
+      {{ listTitle }}
+    </p>
+    <ul>
+      <li *ngFor="let item of list">
+        {{ item }}
+      </li>
+    </ul>
+  </ng-container>
   <small *ngIf="footer">
     {{ footer }}
   </small>

@@ -9,4 +9,6 @@ export class VanillaListItemComponent {
   @Input() public title: string;
   @Input() public details: string;
   @Input() public footer: string;
+  @Input() public list: string[];
+  @Input() public listTitle: string;
 }

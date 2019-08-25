@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { Skill } from "src/app/models/Skill.model";
+import { Training } from "src/app/models/Training.model";
 
 @Component({
   selector: "app-skills",
@@ -7,7 +8,7 @@ import { Skill } from "src/app/models/Skill.model";
   styleUrls: ["./skills.component.scss"]
 })
 export class SkillsComponent implements OnInit {
-  skills: Skill[] = [
+  skillList: Skill[] = [
     { title: "Vocal runs" },
     { title: "Puppeteering" },
     { title: "Burping the alphabet" },
@@ -18,6 +19,32 @@ export class SkillsComponent implements OnInit {
       details: ["Cockney", "Irish", "RP", "Southern", "Brooklyn"]
     }
   ];
+
+  trainingList: Training[] = [
+    {
+      title: "BFA Musical Theatre Degree",
+      institution: "Drake University"
+    },
+    {
+      title: "Performance Apprentice",
+      institution: "Red Branch Theatre Company"
+    },
+    {
+      title: "Acting",
+      instructors: [
+        "Brian McManamon",
+        "Karla Kash",
+        "Michael Cadman",
+        "Jason Bohon",
+        "Forrest McClendon"
+      ]
+    },
+    {
+      title: "Dance",
+      instructors: ["Paula McArthur", "David Dorfman", "Derrick Yanfork"]
+    }
+  ];
+
 
   constructor() { }
 
