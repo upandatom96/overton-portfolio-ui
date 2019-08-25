@@ -1,6 +1,7 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
 import { HttpClientModule } from "@angular/common/http";
+import { FormsModule } from "@angular/forms";
 
 import { AppComponent } from "./app.component";
 import { SimpleComponentsModule } from "./simple-components/simple-components.module";
@@ -19,7 +20,7 @@ import { CreditsComponent } from "./components/resume/credits/credits.component"
 import { SkillsComponent } from "./components/resume/skills/skills.component";
 import { SingingSamplesComponent } from "./components/media/singing-samples/singing-samples.component";
 import { ProductionStillsComponent } from "./components/media/production-stills/production-stills.component";
-import { LoginComponent } from './components/login/login.component';
+import { LoginComponent } from "./components/login/login.component";
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { LoginComponent } from './components/login/login.component';
     SimpleComponentsModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
