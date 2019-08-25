@@ -19,6 +19,7 @@ import { CreditsComponent } from "./components/resume/credits/credits.component"
 import { SkillsComponent } from "./components/resume/skills/skills.component";
 import { SingingSamplesComponent } from "./components/media/singing-samples/singing-samples.component";
 import { ProductionStillsComponent } from "./components/media/production-stills/production-stills.component";
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { ProductionStillsComponent } from "./components/media/production-stills/
     CreditsComponent,
     SkillsComponent,
     SingingSamplesComponent,
-    ProductionStillsComponent
+    ProductionStillsComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

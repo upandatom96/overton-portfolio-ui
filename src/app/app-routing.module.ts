@@ -5,6 +5,7 @@ import { InfoComponent } from "./components/info/info.component";
 import { AboutComponent } from "./components/about/about.component";
 import { ResumeComponent } from "./components/resume/resume.component";
 import { MediaComponent } from "./components/media/media.component";
+import { LoginComponent } from "./components/login/login.component";
 
 const routes: Routes = [
   { path: "", component: HomeComponent },
@@ -12,6 +13,7 @@ const routes: Routes = [
   { path: "about", component: AboutComponent },
   { path: "resume", component: ResumeComponent },
   { path: "media", component: MediaComponent },
+  { path: "login", component: LoginComponent },
   { path: "**", redirectTo: "" },
 ];
 
