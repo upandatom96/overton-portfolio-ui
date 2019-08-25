@@ -13,6 +13,7 @@ import { ModalBoxBasicComponent } from "./modal/modal-box-basic/modal-box-basic.
 import { ModalTriggerButtonComponent } from "./modal/modal-trigger-button/modal-trigger-button.component";
 import { ModalTriggerLinkComponent } from "./modal/modal-trigger-link/modal-trigger-link.component";
 import { SafePipe } from "./pipes/SafeUrlPipe";
+import { VanillaListItemComponent } from "./card/vanilla-list-item/vanilla-list-item.component";
 
 @NgModule({
   exports: [
@@ -28,7 +29,8 @@ import { SafePipe } from "./pipes/SafeUrlPipe";
     ModalBoxBasicComponent,
     ModalTriggerButtonComponent,
     ModalTriggerLinkComponent,
-    SafePipe
+    SafePipe,
+    VanillaListItemComponent,
   ],
   declarations: [
     ErrorsReportComponent,
@@ -42,7 +44,8 @@ import { SafePipe } from "./pipes/SafeUrlPipe";
     ModalBoxBasicComponent,
     ModalTriggerButtonComponent,
     ModalTriggerLinkComponent,
-    SafePipe
+    SafePipe,
+    VanillaListItemComponent
   ],
   imports: [
     CommonModule,

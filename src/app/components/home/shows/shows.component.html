@@ -6,47 +6,25 @@
           Upcoming Shows
         </h2>
         <div class="list-group">
-          <div
-            class="list-group-item list-group-item-action flex-column justify-content-between"
-          >
-            <div class="d-flex w-100 justify-content-between">
-              <h5 class="mb-1">The Wohlfahrt Haus Dinner Threatre</h5>
-            </div>
-            <p class="mb-1">
-              Andrew will be heading to the Wohlfahrt Haus Dinner Theatre in
-              Wytheville, VA to be a part of their holiday show "Hollywood
-              Christmas".
-            </p>
-            <small>December 2018</small>
-          </div>
+          <ng-container *ngFor="let show of upcomingShows">
+            <app-vanilla-list-item
+              [title]="show.title"
+              [details]="show.details"
+              [footer]="buildFooter(show)"
+            ></app-vanilla-list-item>
+          </ng-container>
         </div>
       </div>
       <div class="col-md-6">
         <h2 class="text-center display-2 header-text">Past Shows</h2>
         <div class="list-group">
-          <div
-            class="list-group-item list-group-item-action flex-column align-items-start"
-          >
-            <div class="d-flex w-100 justify-content-between">
-              <h5 class="mb-1">Woodstock Playhouse</h5>
-            </div>
-            <p class="mb-1">
-              Spent the the summer at the Woodstock Playhouse, playing a variety
-              of roles as part of their core company
-            </p>
-            <small>July 2018</small>
-          </div>
-          <div
-            class="list-group-item list-group-item-action flex-column align-items-start"
-          >
-            <div class="d-flex w-100 justify-content-between">
-              <h5 class="mb-1">The Highwood Theatre</h5>
-            </div>
-            <p class="mb-1">
-              Performed in SOON by Nick Blaemire at The Highwood Theatre
-            </p>
-            <small>October 2018</small>
-          </div>
+          <ng-container *ngFor="let show of pastShows">
+            <app-vanilla-list-item
+              [title]="show.title"
+              [details]="show.details"
+              [footer]="buildFooter(show)"
+            ></app-vanilla-list-item>
+          </ng-container>
         </div>
       </div>
     </div>
