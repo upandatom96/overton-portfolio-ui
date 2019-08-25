@@ -1,12 +1,12 @@
-import { Component, OnInit } from '@angular/core';
-import { UserLogin } from 'src/app/models/Auth.model';
-import { BooleanUtilities } from 'src/app/utilities/boolean.utilities';
-import { Router } from '@angular/router';
+import { Component, OnInit } from "@angular/core";
+import { UserLogin } from "src/app/models/Auth.model";
+import { BooleanUtilities } from "src/app/utilities/boolean.utilities";
+import { Router } from "@angular/router";
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  selector: "app-login",
+  templateUrl: "./login.component.html",
+  styleUrls: ["./login.component.scss"]
 })
 export class LoginComponent implements OnInit {
   public user: UserLogin;
@@ -59,6 +59,10 @@ export class LoginComponent implements OnInit {
     //   };
     //   this.ready = true;
     // }
+    this.user = {
+      email: "",
+      password: "",
+    };
     this.ready = true;
   }
 
