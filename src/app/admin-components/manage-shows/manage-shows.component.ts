@@ -111,7 +111,7 @@ export class ManageShowsComponent implements OnInit {
     this.formItem = {
       title: "",
       details: "",
-      month: "",
+      month: "January",
       year: 2019,
       past: false,
     };
@@ -144,6 +144,7 @@ export class ManageShowsComponent implements OnInit {
   }
 
   private submitAdd(): void {
+    this.showList.push(this.formItem);
     this.concludeSubmit();
   }
 
@@ -152,6 +153,13 @@ export class ManageShowsComponent implements OnInit {
   }
 
   private concludeSubmit(): void {
+    this.formItem = {
+      title: "",
+      details: "",
+      month: "January",
+      year: 2019,
+      past: false,
+    };
     this.showErrors = false;
     this.switchToOverviewMode();
   }

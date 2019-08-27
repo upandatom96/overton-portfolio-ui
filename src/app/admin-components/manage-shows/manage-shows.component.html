@@ -135,8 +135,12 @@
               <!-- MONTH -->
               <div class="form-group">
                 <label for="month">Month</label>
-                <select id="month" class="form-control">
-                  <option selected>January</option>
+                <select
+                  id="month"
+                  class="form-control"
+                  [(ngModel)]="formItem.month"
+                >
+                  <option>January</option>
                   <option>February</option>
                   <option>March</option>
                   <option>April</option>
