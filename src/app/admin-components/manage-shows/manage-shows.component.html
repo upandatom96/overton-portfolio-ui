@@ -1,3 +1,92 @@
-<p>
-  manage-shows works!
-</p>
+<section id="manage-shows" class="my-3" *ngIf="admin">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h3 class="display-4 text-center">Shows</h3>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <button [routerLink]="['/show-form']" class="btn btn-success btn-block">
+          Add Show
+        </button>
+      </div>
+    </div>
+    <div class="row" *ngIf="showList; else loading">
+      <div class="col-md-12">
+        <table
+          class="table table-striped"
+          *ngIf="showList.length > 0; else none"
+        >
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Title</th>
+              <th scope="col">Details</th>
+              <th scope="col">Edit</th>
+              <th scope="col">Delete</th>
+            </tr>
+          </thead>
+          <tbody>
+            <ng-container *ngFor="let show of showList; let i = index">
+              <tr>
+                <th scope="row">{{ i + 1 }}</th>
+                <td>{{ show.title }}</td>
+                <td>
+                  <app-modal-trigger-button [modalBoxId]="'details-show-' + i">
+                    More
+                  </app-modal-trigger-button>
+                </td>
+                <td>
+                  <button
+                    class="btn btn-warning"
+                    [routerLink]="['/show-form', show._id]"
+                  >
+                    Edit
+                  </button>
+                </td>
+                <td>
+                  <app-modal-trigger-button
+                    [modalBoxId]="'delete-show-' + i"
+                    [danger]="true"
+                  >
+                    Delete
+                  </app-modal-trigger-button>
+                </td>
+              </tr>
+              <app-modal-box-basic
+                [modalBoxId]="'details-show-' + i"
+                [modalTitle]="show.title"
+              >
+                <app-json-pretty-table [data]="show"></app-json-pretty-table>
+              </app-modal-box-basic>
+              <app-modal-box-basic
+                [modalBoxId]="'delete-show-' + i"
+                [modalTitle]="'Delete ' + show.title"
+              >
+                <p>Are you sure you want to delete this bookmark?</p>
+                <button
+                  class="btn btn-danger btn-block"
+                  data-dismiss="modal"
+                  (click)="deleteShow(show._id)"
+                >
+                  Delete
+                </button>
+              </app-modal-box-basic>
+            </ng-container>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<ng-template #none>
+  <p>
+    This collection is empty.
+  </p>
+</ng-template>
+
+<ng-template #loading>
+  <app-loading></app-loading>
+</ng-template>
