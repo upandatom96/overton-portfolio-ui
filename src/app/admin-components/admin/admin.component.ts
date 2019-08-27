@@ -15,19 +15,19 @@ export class AdminComponent implements OnInit {
   public managementLinks: RouterNav[] = [
     {
       label: "Manage Home",
-      routerLink: "/admin/(manage:home)"
+      routerLink: "home"
     },
     {
       label: "Manage About",
-      routerLink: "/admin/(manage:home)"
+      routerLink: "about"
     },
     {
       label: "Manage Resume",
-      routerLink: "/admin/(manage:home)"
+      routerLink: "resume"
     },
     {
       label: "Manage Media",
-      routerLink: "/admin/(manage:home)"
+      routerLink: "media"
     },
   ];
 

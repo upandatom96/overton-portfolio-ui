@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AdminHomeMenuComponent } from './admin-home-menu.component';
+import { ManageAboutComponent } from './manage-about.component';
 
-describe('AdminHomeMenuComponent', () => {
-  let component: AdminHomeMenuComponent;
-  let fixture: ComponentFixture<AdminHomeMenuComponent>;
+describe('ManageAboutComponent', () => {
+  let component: ManageAboutComponent;
+  let fixture: ComponentFixture<ManageAboutComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AdminHomeMenuComponent ]
+      declarations: [ ManageAboutComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AdminHomeMenuComponent);
+    fixture = TestBed.createComponent(ManageAboutComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
