@@ -120,15 +120,23 @@ export class ManageShowsComponent implements OnInit {
 
   public switchToEditMode(id: string): void {
     this.showErrors = false;
-    this.formItem = this.showList.find((show) => {
+    const focusItem = this.showList.find((show) => {
       return show._id === id;
     });
+    this.formItem = {
+      _id: focusItem._id,
+      title: focusItem.title,
+      details: focusItem.details,
+      month: focusItem.month,
+      year: focusItem.year,
+      past: focusItem.past,
+    };
     this.mode = ManagementModeValues.EDIT;
   }
 
   public deleteShow(id: string): void {
     this.showList = this.showList.filter((show) => {
-      return show._id = id;
+      return show._id !== id;
     });
   }
 
@@ -144,11 +152,17 @@ export class ManageShowsComponent implements OnInit {
   }
 
   private submitAdd(): void {
+    const newId = (this.showList.length + 5).toString();
+    this.formItem._id = newId;
     this.showList.push(this.formItem);
     this.concludeSubmit();
   }
 
   private submitEdit(): void {
+    this.showList = this.showList.filter((show) => {
+      return show._id !== this.formItem._id;
+    });
+    this.showList.push(this.formItem);
     this.concludeSubmit();
   }
 
