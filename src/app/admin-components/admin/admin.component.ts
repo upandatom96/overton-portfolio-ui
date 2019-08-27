@@ -18,6 +18,10 @@ export class AdminComponent implements OnInit {
       routerLink: "home"
     },
     {
+      label: "Manage Shows",
+      routerLink: "shows"
+    },
+    {
       label: "Manage About",
       routerLink: "about"
     },

@@ -12,6 +12,7 @@ import { ManageHomeComponent } from "./admin-components/manage-home/manage-home.
 import { ManageAboutComponent } from "./admin-components/manage-about/manage-about.component";
 import { ManageResumeComponent } from "./admin-components/manage-resume/manage-resume.component";
 import { ManageMediaComponent } from "./admin-components/manage-media/manage-media.component";
+import { ManageShowsComponent } from './admin-components/manage-shows/manage-shows.component';
 
 const routes: Routes = [
   { path: "", component: HomeComponent },
@@ -29,6 +30,7 @@ const routes: Routes = [
       { path: "about", component: ManageAboutComponent, outlet: "manage" },
       { path: "resume", component: ManageResumeComponent, outlet: "manage" },
       { path: "media", component: ManageMediaComponent, outlet: "manage" },
+      { path: "shows", component: ManageShowsComponent, outlet: "manage" },
     ],
   },
   { path: "**", redirectTo: "" },
