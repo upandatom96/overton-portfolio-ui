@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Show } from 'src/app/models/Show.model';
+import { ManagementModeValues } from 'src/app/enums/mode-enums';
 
 @Component({
   selector: 'app-manage-shows',
@@ -34,12 +35,45 @@ export class ManageShowsComponent implements OnInit {
       past: true,
     },
   ];
+  public formItem: Show;
 
   public admin = true;
+  public mode: ManagementModeValues = ManagementModeValues.OVERVIEW;
+
+  public get overviewActive(): boolean {
+    return this.mode === ManagementModeValues.OVERVIEW;
+  }
+
+  public get formActive(): boolean {
+    return this.addActive || this.editActive;
+  }
+
+  public get addActive(): boolean {
+    return this.mode === ManagementModeValues.ADD;
+  }
+
+  public get editActive(): boolean {
+    return this.mode === ManagementModeValues.EDIT;
+  }
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  public switchToAddMode(): void {
+    this.mode = ManagementModeValues.ADD;
+  }
+
+  public switchToOverviewMode(): void {
+    this.mode = ManagementModeValues.OVERVIEW;
+  }
+
+  public switchToEditMode(id: string): void {
+    this.formItem = this.showList.find((show) => {
+      return show._id === id;
+    });
+    this.mode = ManagementModeValues.EDIT;
   }
 
   public deleteShow(id: string): void {

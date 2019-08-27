@@ -53,7 +53,7 @@ import { ManageShowsComponent } from './admin-components/manage-shows/manage-sho
     ManageResumeComponent,
     ManageMediaComponent,
     ManageHomeComponent,
-    ManageShowsComponent
+    ManageShowsComponent,
   ],
   imports: [
     BrowserModule,
