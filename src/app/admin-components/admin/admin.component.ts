@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
-import { Router } from '@angular/router';
-import { RouterNav } from 'src/app/models/Link.model';
+import { Router } from "@angular/router";
+import { RouterNav } from "src/app/models/Link.model";
 
 import { faHome } from "@fortawesome/free-solid-svg-icons";
 

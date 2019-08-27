@@ -1,8 +1,8 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { ManageHomeComponent } from './manage-home.component';
+import { ManageHomeComponent } from "./manage-home.component";
 
-describe('ManageHomeComponent', () => {
+describe("ManageHomeComponent", () => {
   let component: ManageHomeComponent;
   let fixture: ComponentFixture<ManageHomeComponent>;
 
@@ -19,7 +19,7 @@ describe('ManageHomeComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

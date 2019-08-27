@@ -1,8 +1,8 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { ManageAboutComponent } from './manage-about.component';
+import { ManageAboutComponent } from "./manage-about.component";
 
-describe('ManageAboutComponent', () => {
+describe("ManageAboutComponent", () => {
   let component: ManageAboutComponent;
   let fixture: ComponentFixture<ManageAboutComponent>;
 
@@ -19,7 +19,7 @@ describe('ManageAboutComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

@@ -22,11 +22,11 @@ import { SingingSamplesComponent } from "./components/media/singing-samples/sing
 import { ProductionStillsComponent } from "./components/media/production-stills/production-stills.component";
 import { LoginComponent } from "./components/login/login.component";
 import { AdminComponent } from "./admin-components/admin/admin.component";
-import { MenuComponent } from './admin-components/menu/menu.component';
-import { ManageAboutComponent } from './admin-components/manage-about/manage-about.component';
-import { ManageResumeComponent } from './admin-components/manage-resume/manage-resume.component';
-import { ManageMediaComponent } from './admin-components/manage-media/manage-media.component';
-import { ManageHomeComponent } from './admin-components/manage-home/manage-home.component';
+import { MenuComponent } from "./admin-components/menu/menu.component";
+import { ManageAboutComponent } from "./admin-components/manage-about/manage-about.component";
+import { ManageResumeComponent } from "./admin-components/manage-resume/manage-resume.component";
+import { ManageMediaComponent } from "./admin-components/manage-media/manage-media.component";
+import { ManageHomeComponent } from "./admin-components/manage-home/manage-home.component";
 
 @NgModule({
   declarations: [

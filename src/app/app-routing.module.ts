@@ -7,11 +7,11 @@ import { ResumeComponent } from "./components/resume/resume.component";
 import { MediaComponent } from "./components/media/media.component";
 import { LoginComponent } from "./components/login/login.component";
 import { AdminComponent } from "./admin-components/admin/admin.component";
-import { MenuComponent } from './admin-components/menu/menu.component';
-import { ManageHomeComponent } from './admin-components/manage-home/manage-home.component';
-import { ManageAboutComponent } from './admin-components/manage-about/manage-about.component';
-import { ManageResumeComponent } from './admin-components/manage-resume/manage-resume.component';
-import { ManageMediaComponent } from './admin-components/manage-media/manage-media.component';
+import { MenuComponent } from "./admin-components/menu/menu.component";
+import { ManageHomeComponent } from "./admin-components/manage-home/manage-home.component";
+import { ManageAboutComponent } from "./admin-components/manage-about/manage-about.component";
+import { ManageResumeComponent } from "./admin-components/manage-resume/manage-resume.component";
+import { ManageMediaComponent } from "./admin-components/manage-media/manage-media.component";
 
 const routes: Routes = [
   { path: "", component: HomeComponent },
@@ -21,14 +21,14 @@ const routes: Routes = [
   { path: "media", component: MediaComponent },
   { path: "login", component: LoginComponent },
   {
-    path: 'admin',
+    path: "admin",
     component: AdminComponent,
     children: [
-      { path: '', component: MenuComponent, outlet: 'manage' },
-      { path: 'home', component: ManageHomeComponent, outlet: 'manage' },
-      { path: 'about', component: ManageAboutComponent, outlet: 'manage' },
-      { path: 'resume', component: ManageResumeComponent, outlet: 'manage' },
-      { path: 'media', component: ManageMediaComponent, outlet: 'manage' },
+      { path: "", component: MenuComponent, outlet: "manage" },
+      { path: "home", component: ManageHomeComponent, outlet: "manage" },
+      { path: "about", component: ManageAboutComponent, outlet: "manage" },
+      { path: "resume", component: ManageResumeComponent, outlet: "manage" },
+      { path: "media", component: ManageMediaComponent, outlet: "manage" },
     ],
   },
   { path: "**", redirectTo: "" },

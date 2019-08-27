@@ -1,8 +1,8 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { ManageResumeComponent } from './manage-resume.component';
+import { ManageResumeComponent } from "./manage-resume.component";
 
-describe('ManageResumeComponent', () => {
+describe("ManageResumeComponent", () => {
   let component: ManageResumeComponent;
   let fixture: ComponentFixture<ManageResumeComponent>;
 
@@ -19,7 +19,7 @@ describe('ManageResumeComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

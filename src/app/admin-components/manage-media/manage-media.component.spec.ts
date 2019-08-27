@@ -1,8 +1,8 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { ManageMediaComponent } from './manage-media.component';
+import { ManageMediaComponent } from "./manage-media.component";
 
-describe('ManageMediaComponent', () => {
+describe("ManageMediaComponent", () => {
   let component: ManageMediaComponent;
   let fixture: ComponentFixture<ManageMediaComponent>;
 
@@ -19,7 +19,7 @@ describe('ManageMediaComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });
