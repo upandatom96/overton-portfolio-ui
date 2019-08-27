@@ -1,3 +1,49 @@
-<p>
-  admin works!
-</p>
+<section class="my-5" id="login-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 mx-auto">
+        <h1>Welcome to the Admin Page</h1>
+        <p>
+          This is a mockup of what an admin page would look like. Try "Manage
+          Home".
+        </p>
+      </div>
+    </div>
+
+    <div class="row mb-3">
+      <div class="col-md-8 mx-auto">
+        <button class="btn btn-dark btn-block" routerLink="/admin-home">
+          Manage Home
+        </button>
+      </div>
+    </div>
+
+    <div class="row mb-3">
+      <div class="col-md-8 mx-auto">
+        <button class="btn btn-dark btn-block">
+          Manage About
+        </button>
+      </div>
+    </div>
+
+    <div class="row mb-3">
+      <div class="col-md-8 mx-auto">
+        <button class="btn btn-dark btn-block">
+          Manage Resume
+        </button>
+      </div>
+    </div>
+
+    <div class="row mb-3">
+      <div class="col-md-8 mx-auto">
+        <button class="btn btn-dark btn-block">
+          Manage Media
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<ng-template #loading>
+  <app-loading></app-loading>
+</ng-template>
