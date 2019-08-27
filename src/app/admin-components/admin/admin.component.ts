@@ -16,7 +16,7 @@ export class AdminComponent implements OnInit {
   }
 
   public manageHome() {
-    this.router.navigateByUrl("/admin(admin:manage-home)");
+    this.router.navigateByUrl("/admin/(manage:home)");
   }
 
 }

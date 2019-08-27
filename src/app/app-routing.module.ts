@@ -16,9 +16,13 @@ const routes: Routes = [
   { path: "resume", component: ResumeComponent },
   { path: "media", component: MediaComponent },
   { path: "login", component: LoginComponent },
-  { path: "admin", component: AdminComponent, outlet: 'primary' },
-  { path: "admin-home-menu", component: AdminHomeMenuComponent },
-  {path: 'manage-home', component: AdminHomeMenuComponent, outlet: 'admin'},
+  {
+    path: 'admin',
+    component: AdminComponent,
+    children: [
+      { path: 'home', component: AdminHomeMenuComponent, outlet: 'manage' },
+    ],
+  },
   { path: "**", redirectTo: "" },
 ];
 
