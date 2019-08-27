@@ -3,3 +3,8 @@ export interface Link {
   href?: string;
   routerLink?: string;
 }
+
+export interface RouterNav {
+  label: string;
+  routerLink: string;
+}

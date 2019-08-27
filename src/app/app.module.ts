@@ -23,6 +23,7 @@ import { ProductionStillsComponent } from "./components/media/production-stills/
 import { LoginComponent } from "./components/login/login.component";
 import { AdminComponent } from "./admin-components/admin/admin.component";
 import { AdminHomeMenuComponent } from './admin-components/home/admin-home-menu/admin-home-menu.component';
+import { MenuComponent } from './admin-components/menu/menu.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { AdminHomeMenuComponent } from './admin-components/home/admin-home-menu/
     ProductionStillsComponent,
     LoginComponent,
     AdminComponent,
-    AdminHomeMenuComponent
+    AdminHomeMenuComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,

@@ -1,58 +1,16 @@
-<section class="my-5" id="login-section">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6 mx-auto">
-        <h1>Welcome to the Admin Page</h1>
-        <p>
-          This is a mockup of what an admin page would look like. Try "Manage
-          Home".
-        </p>
-      </div>
-    </div>
-
-    <div class="row mb-3">
-      <div class="col-md-8 mx-auto">
-        <button class="btn btn-dark btn-block" (click)="manageHome()">
-          Manage Home
-        </button>
-      </div>
-    </div>
-
-    <div class="row mb-3">
-      <div class="col-md-8 mx-auto">
-        <button class="btn btn-dark btn-block">
-          Manage About
-        </button>
-      </div>
-    </div>
-
-    <div class="row mb-3">
-      <div class="col-md-8 mx-auto">
-        <button class="btn btn-dark btn-block">
-          Manage Resume
-        </button>
-      </div>
-    </div>
-
-    <div class="row mb-3">
-      <div class="col-md-8 mx-auto">
-        <button class="btn btn-dark btn-block">
-          Manage Media
-        </button>
-      </div>
-    </div>
-  </div>
-</section>
+<button class="btn btn-dark" routerLink="/admin" routerLinkActive="selected">
+  <span>
+    <fa-icon [icon]="faHome"></fa-icon>
+  </span>
+</button>
 
 <button
+  class="btn btn-dark"
+  *ngFor="let link of managementLinks"
   [routerLink]="[{ outlets: { manage: ['home'] } }]"
   routerLinkActive="selected"
 >
-  <span>Sub Router Control</span>
+  <span>{{ link.label }}</span>
 </button>
 
 <router-outlet name="manage"></router-outlet>
-
-<ng-template #loading>
-  <app-loading></app-loading>
-</ng-template>
