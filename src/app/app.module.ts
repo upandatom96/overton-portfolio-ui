@@ -21,7 +21,7 @@ import { SkillsComponent } from "./components/resume/skills/skills.component";
 import { SingingSamplesComponent } from "./components/media/singing-samples/singing-samples.component";
 import { ProductionStillsComponent } from "./components/media/production-stills/production-stills.component";
 import { LoginComponent } from "./components/login/login.component";
-import { AdminComponent } from "./components/admin/admin.component";
+import { AdminComponent } from "./admin-components/admin/admin.component";
 
 @NgModule({
   declarations: [

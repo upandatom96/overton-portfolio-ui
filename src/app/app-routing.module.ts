@@ -6,7 +6,7 @@ import { AboutComponent } from "./components/about/about.component";
 import { ResumeComponent } from "./components/resume/resume.component";
 import { MediaComponent } from "./components/media/media.component";
 import { LoginComponent } from "./components/login/login.component";
-import { AdminComponent } from "./components/admin/admin.component";
+import { AdminComponent } from "./admin-components/admin/admin.component";
 
 const routes: Routes = [
   { path: "", component: HomeComponent },
