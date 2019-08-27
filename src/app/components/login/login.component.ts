@@ -79,6 +79,7 @@ export class LoginComponent implements OnInit {
     //         this.router.navigate(["/profile"]);
     //       }
     //     });
+    this.router.navigate(["/admin"]);
   }
 
   public submitPasswordReset(): void {
