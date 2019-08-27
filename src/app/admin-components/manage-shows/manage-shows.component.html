@@ -105,6 +105,9 @@
         <section id="form-body">
           <div id="form-selections" class="row">
             <div class="col-md-12">
+              <!-- START FORM -->
+
+              <!-- TITLE -->
               <div class="form-group">
                 <label for="title"> Title </label>
                 <input
@@ -115,6 +118,66 @@
                   placeholder="Title"
                 />
               </div>
+
+              <!-- DETAILS -->
+              <div class="form-group">
+                <label for="details"> Details </label>
+                <textarea
+                  name="details"
+                  type="text"
+                  class="form-control"
+                  [(ngModel)]="formItem.details"
+                  placeholder="Details"
+                >
+                </textarea>
+              </div>
+
+              <!-- MONTH -->
+              <div class="form-group">
+                <label for="month">Month</label>
+                <select id="month" class="form-control">
+                  <option selected>January</option>
+                  <option>February</option>
+                  <option>March</option>
+                  <option>April</option>
+                  <option>June</option>
+                  <option>July</option>
+                  <option>August</option>
+                  <option>September</option>
+                  <option>October</option>
+                  <option>November</option>
+                  <option>December</option>
+                </select>
+              </div>
+
+              <!-- YEAR -->
+              <div class="form-group">
+                <label for="year"> Year </label>
+                <input
+                  name="year"
+                  type="number"
+                  class="form-control"
+                  [(ngModel)]="formItem.year"
+                  placeholder="Year"
+                />
+              </div>
+
+              <!-- PAST -->
+              <div class="form-group">
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    id="past"
+                    [(ngModel)]="formItem.past"
+                  />
+                  <label class="form-check-label" for="past">
+                    Past Show
+                  </label>
+                </div>
+              </div>
+
+              <!-- END FORM -->
             </div>
           </div>
           <app-errors-report-row

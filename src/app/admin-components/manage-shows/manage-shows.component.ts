@@ -70,10 +70,24 @@ export class ManageShowsComponent implements OnInit {
     return !BooleanUtilities.hasValue(this.formItem.title);
   }
 
+  public get detailsError(): boolean {
+    return !BooleanUtilities.hasValue(this.formItem.details);
+  }
+
+  public get yearError(): boolean {
+    return !BooleanUtilities.hasValue(this.formItem.year);
+  }
+
   public get errors(): String[] {
     const errors: String[] = [];
     if (this.titleError) {
       errors.push("Please add a title.");
+    }
+    if (this.detailsError) {
+      errors.push("Please add details.");
+    }
+    if (this.yearError) {
+      errors.push("Please add a year.");
     }
     return errors;
   }
