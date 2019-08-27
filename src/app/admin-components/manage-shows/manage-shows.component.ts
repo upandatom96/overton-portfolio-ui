@@ -1,12 +1,12 @@
-import { Component, OnInit } from '@angular/core';
-import { Show } from 'src/app/models/Show.model';
-import { ManagementModeValues } from 'src/app/enums/mode-enums';
-import { BooleanUtilities } from 'src/app/utilities/boolean.utilities';
+import { Component, OnInit } from "@angular/core";
+import { Show } from "src/app/models/Show.model";
+import { ManagementModeValues } from "src/app/enums/mode-enums";
+import { BooleanUtilities } from "src/app/utilities/boolean.utilities";
 
 @Component({
-  selector: 'app-manage-shows',
-  templateUrl: './manage-shows.component.html',
-  styleUrls: ['./manage-shows.component.scss']
+  selector: "app-manage-shows",
+  templateUrl: "./manage-shows.component.html",
+  styleUrls: ["./manage-shows.component.scss"]
 })
 export class ManageShowsComponent implements OnInit {
   public showList: Show[] = [

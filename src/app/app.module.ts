@@ -27,7 +27,7 @@ import { ManageAboutComponent } from "./admin-components/manage-about/manage-abo
 import { ManageResumeComponent } from "./admin-components/manage-resume/manage-resume.component";
 import { ManageMediaComponent } from "./admin-components/manage-media/manage-media.component";
 import { ManageHomeComponent } from "./admin-components/manage-home/manage-home.component";
-import { ManageShowsComponent } from './admin-components/manage-shows/manage-shows.component';
+import { ManageShowsComponent } from "./admin-components/manage-shows/manage-shows.component";
 
 @NgModule({
   declarations: [
