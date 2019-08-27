@@ -135,9 +135,25 @@ export class ManageShowsComponent implements OnInit {
   public submit(): void {
     this.showErrors = true;
     if (this.valid) {
-      this.showErrors = false;
-      this.switchToOverviewMode();
+      if (this.addActive) {
+        this.submitAdd();
+      } else {
+        this.submitEdit();
+      }
     }
+  }
+
+  private submitAdd(): void {
+    this.concludeSubmit();
+  }
+
+  private submitEdit(): void {
+    this.concludeSubmit();
+  }
+
+  private concludeSubmit(): void {
+    this.showErrors = false;
+    this.switchToOverviewMode();
   }
 
 }
