@@ -22,6 +22,7 @@ import { SingingSamplesComponent } from "./components/media/singing-samples/sing
 import { ProductionStillsComponent } from "./components/media/production-stills/production-stills.component";
 import { LoginComponent } from "./components/login/login.component";
 import { AdminComponent } from "./admin-components/admin/admin.component";
+import { AdminHomeMenuComponent } from './admin-components/home/admin-home-menu/admin-home-menu.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { AdminComponent } from "./admin-components/admin/admin.component";
     SingingSamplesComponent,
     ProductionStillsComponent,
     LoginComponent,
-    AdminComponent
+    AdminComponent,
+    AdminHomeMenuComponent
   ],
   imports: [
     BrowserModule,
