@@ -101,9 +101,33 @@
       </div>
     </ng-container>
     <ng-container *ngIf="formActive">
-      <div class="row">
-        <div class="col-md-12"></div>
-      </div>
+      <ng-container *ngIf="formReady; else loading">
+        <section id="form-body">
+          <div id="form-selections" class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label for="title"> Title </label>
+                <input
+                  name="title"
+                  type="text"
+                  class="form-control"
+                  [(ngModel)]="formItem.title"
+                  placeholder="Title"
+                />
+              </div>
+            </div>
+          </div>
+          <app-errors-report-row
+            class="mt-3"
+            [errors]="errors"
+            [showErrors]="showErrors"
+          ></app-errors-report-row>
+
+          <button class="btn btn-success btn-block mt-3" (click)="submit()">
+            Save Show
+          </button>
+        </section>
+      </ng-container>
     </ng-container>
   </div>
 </section>

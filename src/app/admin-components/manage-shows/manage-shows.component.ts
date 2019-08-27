@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Show } from 'src/app/models/Show.model';
 import { ManagementModeValues } from 'src/app/enums/mode-enums';
+import { BooleanUtilities } from 'src/app/utilities/boolean.utilities';
 
 @Component({
   selector: 'app-manage-shows',
@@ -36,9 +37,18 @@ export class ManageShowsComponent implements OnInit {
     },
   ];
   public formItem: Show;
+  public showErrors = false;
 
   public admin = true;
   public mode: ManagementModeValues = ManagementModeValues.OVERVIEW;
+
+  public get overviewReady(): boolean {
+    return true;
+  }
+
+  public get formReady(): boolean {
+    return true;
+  }
 
   public get overviewActive(): boolean {
     return this.mode === ManagementModeValues.OVERVIEW;
@@ -56,20 +66,46 @@ export class ManageShowsComponent implements OnInit {
     return this.mode === ManagementModeValues.EDIT;
   }
 
-  constructor() { }
-
-  ngOnInit() {
+  public get titleError(): boolean {
+    return !BooleanUtilities.hasValue(this.formItem.title);
   }
 
-  public switchToAddMode(): void {
-    this.mode = ManagementModeValues.ADD;
+  public get errors(): String[] {
+    const errors: String[] = [];
+    if (this.titleError) {
+      errors.push("Please add a title.");
+    }
+    return errors;
+  }
+
+  private get valid(): boolean {
+    return this.errors.length === 0;
+  }
+
+  constructor() { }
+
+  public ngOnInit() {
   }
 
   public switchToOverviewMode(): void {
+    this.showErrors = false;
     this.mode = ManagementModeValues.OVERVIEW;
   }
 
+  public switchToAddMode(): void {
+    this.showErrors = false;
+    this.formItem = {
+      title: "",
+      details: "",
+      month: "",
+      year: 2019,
+      past: false,
+    };
+    this.mode = ManagementModeValues.ADD;
+  }
+
   public switchToEditMode(id: string): void {
+    this.showErrors = false;
     this.formItem = this.showList.find((show) => {
       return show._id === id;
     });
@@ -80,6 +116,14 @@ export class ManageShowsComponent implements OnInit {
     this.showList = this.showList.filter((show) => {
       return show._id = id;
     });
+  }
+
+  public submit(): void {
+    this.showErrors = true;
+    if (this.valid) {
+      this.showErrors = false;
+      this.switchToOverviewMode();
+    }
   }
 
 }
