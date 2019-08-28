@@ -10,9 +10,7 @@ import { faHome } from "@fortawesome/free-solid-svg-icons";
   styleUrls: ["./admin.component.scss"]
 })
 export class AdminComponent implements OnInit {
-  public showSidebar = false;
-
-
+  public showSidebar = true;
 
   public faHome = faHome;
 

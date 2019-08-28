@@ -1,4 +1,4 @@
-<div class="d-flex w-100" id="wrapper">
+<div class="d-flex" id="wrapper">
   <!-- Sidebar -->
   <div class="bg-light border-right" id="sidebar-wrapper" *ngIf="showSidebar">
     <div class="sidebar-heading">
@@ -41,7 +41,8 @@
         id="menu-toggle"
         (click)="toggleSidebar()"
       >
-        Toggle Menu
+        <span *ngIf="!showSidebar">Show Menu</span>
+        <span *ngIf="showSidebar">Hide Menu</span>
       </button>
     </nav>
 
