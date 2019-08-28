@@ -1,8 +1,8 @@
-import { Injectable } from '@angular/core';
-import { Show } from '../models/Show.model';
+import { Injectable } from "@angular/core";
+import { Show } from "../models/Show.model";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root"
 })
 export class ShowService {
   public showList: Show[] = [
