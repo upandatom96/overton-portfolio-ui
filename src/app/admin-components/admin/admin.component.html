@@ -2,7 +2,7 @@
   <!-- Sidebar -->
   <div class="bg-light border-right" id="sidebar-wrapper" *ngIf="showSidebar">
     <div class="sidebar-heading">
-      Admin Navigation
+      Hello, Andrew!
     </div>
     <div class="list-group list-group-flush">
       <a
@@ -20,6 +20,7 @@
           routerLinkActive="selected"
           class="list-group-item list-group-item-action bg-light"
         >
+          <fa-icon [icon]="faEdit"></fa-icon>
           {{ link.label }}
         </a>
       </ng-container>
@@ -27,6 +28,7 @@
         routerLink="/login"
         class="list-group-item list-group-item-action bg-light"
       >
+        <fa-icon [icon]="faLock"></fa-icon>
         Logout
       </a>
     </div>
@@ -37,13 +39,16 @@
   <div id="page-content-wrapper">
     <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
       <button
-        class="btn btn-primary"
+        class="btn btn-outline-dark"
         id="menu-toggle"
         (click)="toggleSidebar()"
       >
-        <span *ngIf="!showSidebar">Show Menu</span>
-        <span *ngIf="showSidebar">Hide Menu</span>
+        <span *ngIf="!showSidebar">Show Sidebar</span>
+        <span *ngIf="showSidebar">Hide Sidebar</span>
       </button>
+      <a class="navbar-brand ml-5">
+        Admin Menu
+      </a>
     </nav>
 
     <div class="container-fluid">

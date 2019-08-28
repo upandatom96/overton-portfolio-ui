@@ -2,7 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
 import { RouterNav } from "src/app/models/Link.model";
 
-import { faHome } from "@fortawesome/free-solid-svg-icons";
+import { faHome, faLock, faEdit } from "@fortawesome/free-solid-svg-icons";
 
 @Component({
   selector: "app-admin",
@@ -10,10 +10,11 @@ import { faHome } from "@fortawesome/free-solid-svg-icons";
   styleUrls: ["./admin.component.scss"]
 })
 export class AdminComponent implements OnInit {
-  public showSidebar = true;
-
   public faHome = faHome;
+  public faLock = faLock;
+  public faEdit = faEdit;
 
+  public showSidebar = true;
   public managementLinks: RouterNav[] = [
     {
       label: "Manage Home",
