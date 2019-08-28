@@ -10,6 +10,10 @@ import { faHome } from "@fortawesome/free-solid-svg-icons";
   styleUrls: ["./admin.component.scss"]
 })
 export class AdminComponent implements OnInit {
+  public showSidebar = false;
+
+
+
   public faHome = faHome;
 
   public managementLinks: RouterNav[] = [
@@ -44,6 +48,10 @@ export class AdminComponent implements OnInit {
 
   public manageHome() {
     this.router.navigateByUrl("/admin/(manage:home)");
+  }
+
+  public toggleSidebar() {
+    this.showSidebar = !this.showSidebar;
   }
 
 }
