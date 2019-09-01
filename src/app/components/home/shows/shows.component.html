@@ -13,6 +13,9 @@
               [footer]="buildFooter(show)"
             ></app-vanilla-list-item>
           </ng-container>
+          <p class="text-center" *ngIf="upcomingShows.length === 0">
+            No upcoming shows.
+          </p>
         </div>
       </div>
       <div class="col-md-6">
@@ -25,6 +28,9 @@
               [footer]="buildFooter(show)"
             ></app-vanilla-list-item>
           </ng-container>
+          <p class="text-center" *ngIf="pastShows.length === 0">
+            No past shows.
+          </p>
         </div>
       </div>
     </div>
