@@ -9,28 +9,18 @@ import { SingingSample } from "src/app/models/SingingSample.model";
 export class SingingSamplesComponent implements OnInit {
   public singingSampleList: SingingSample[] = [
     {
+      title: "Try Me & Big News",
       labels: [
-        {
-          title: "Try Me",
-          byline: "She Loves Me",
-        },
-        {
-          title: "Big News",
-          byline: "Parade",
-        },
+        "Try Me - She Loves Me",
+        "Big News - Parade"
       ],
       youtubeLink: "https://www.youtube.com/embed/e5v7bVIbELY",
     },
     {
+      title: "Santa Fe & Big News",
       labels: [
-        {
-          title: "Santa Fe",
-          byline: "Newsies",
-        },
-        {
-          title: "Big News",
-          byline: "Robber Bridegroom",
-        },
+        "Santa Fe - Newsies",
+        "Big News - Robber Bridegroom",
       ],
       youtubeLink: "https://www.youtube.com/embed/BjYnZSc_lFg",
     },
