@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { UserLogin } from "src/app/models/Auth.model";
 import { BooleanUtilities } from "src/app/utilities/boolean.utilities";
 import { Router } from "@angular/router";
+import { faLock } from "@fortawesome/free-solid-svg-icons";
 
 @Component({
   selector: "app-login",
@@ -9,6 +10,8 @@ import { Router } from "@angular/router";
   styleUrls: ["./login.component.scss"]
 })
 export class LoginComponent implements OnInit {
+  public faLock = faLock;
+
   public user: UserLogin;
   public error = false;
   public ready = false;
