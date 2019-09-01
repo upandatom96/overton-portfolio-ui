@@ -3,7 +3,7 @@ import { Show } from "src/app/models/Show.model";
 import { ManagementModeValues } from "src/app/enums/mode-enums";
 import { BooleanUtilities } from "src/app/utilities/boolean.utilities";
 import { ShowService } from "src/app/services/show.service";
-import { ShowStatusValues } from 'src/app/enums/show-status-enums';
+import { ShowStatusValues } from "src/app/enums/show-status-enums";
 
 @Component({
   selector: "app-manage-shows",

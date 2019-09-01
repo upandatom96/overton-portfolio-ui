@@ -1,4 +1,4 @@
-import { ShowStatusValues } from '../enums/show-status-enums';
+import { ShowStatusValues } from "../enums/show-status-enums";
 
 export interface Show {
   _id?: string;

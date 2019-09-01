@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { Show } from "../models/Show.model";
-import { ShowStatusValues } from '../enums/show-status-enums';
+import { ShowStatusValues } from "../enums/show-status-enums";
 
 @Injectable({
   providedIn: "root"

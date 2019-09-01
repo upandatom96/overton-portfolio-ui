@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { Show } from "src/app/models/Show.model";
 import { ShowService } from "src/app/services/show.service";
-import { ShowStatusValues } from 'src/app/enums/show-status-enums';
+import { ShowStatusValues } from "src/app/enums/show-status-enums";
 
 @Component({
   selector: "app-shows",
