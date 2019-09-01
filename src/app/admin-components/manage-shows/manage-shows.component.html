@@ -168,21 +168,20 @@
 
               <!-- PAST -->
               <div class="form-group">
-                <div class="form-check">
-                  <input
-                    class="form-check-input"
-                    type="checkbox"
-                    id="past"
-                    [(ngModel)]="formItem.past"
-                  />
-                  <label class="form-check-label" for="past">
-                    Past Show
-                  </label>
-                </div>
+                <label for="status">Show Status</label>
+                <select
+                  id="status"
+                  class="form-control"
+                  [(ngModel)]="formItem.status"
+                >
+                  <option value="UPCOMING">Upcoming</option>
+                  <option value="PAST">Past</option>
+                  <option value="ARCHIVED">Archived</option>
+                </select>
               </div>
-
-              <!-- END FORM -->
             </div>
+
+            <!-- END FORM -->
           </div>
           <app-errors-report-row
             class="mt-3"

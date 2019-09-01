@@ -1,5 +1,6 @@
 import { Injectable } from "@angular/core";
 import { Show } from "../models/Show.model";
+import { ShowStatusValues } from '../enums/show-status-enums';
 
 @Injectable({
   providedIn: "root"
@@ -13,7 +14,7 @@ export class ShowService {
         `to be a part of their holiday show "Hollywood Christmas"`,
       month: "December",
       year: 2018,
-      past: false,
+      status: ShowStatusValues.UPCOMING,
     },
     {
       _id: "2",
@@ -21,7 +22,7 @@ export class ShowService {
       details: "Spent the the summer at the Woodstock Playhouse, playing a variety of roles as part of their core company ",
       month: "July",
       year: 2018,
-      past: true,
+      status: ShowStatusValues.PAST,
     },
     {
       _id: "3",
@@ -29,7 +30,15 @@ export class ShowService {
       details: "Performed in SOON by Nick Blaemire at The Highwood Theatre ",
       month: "October",
       year: 2018,
-      past: true,
+      status: ShowStatusValues.PAST,
+    },
+    {
+      _id: "4",
+      title: "Not a Real Play",
+      details: "Performed on February 31st",
+      month: "February",
+      year: 1900,
+      status: ShowStatusValues.ARCHIVED,
     },
   ];
 

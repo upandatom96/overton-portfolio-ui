@@ -3,6 +3,7 @@ import { Show } from "src/app/models/Show.model";
 import { ManagementModeValues } from "src/app/enums/mode-enums";
 import { BooleanUtilities } from "src/app/utilities/boolean.utilities";
 import { ShowService } from "src/app/services/show.service";
+import { ShowStatusValues } from 'src/app/enums/show-status-enums';
 
 @Component({
   selector: "app-manage-shows",
@@ -97,7 +98,7 @@ export class ManageShowsComponent implements OnInit {
       details: "",
       month: "January",
       year: 2019,
-      past: false,
+      status: ShowStatusValues.UPCOMING,
     };
     this.mode = ManagementModeValues.ADD;
   }
@@ -113,7 +114,7 @@ export class ManageShowsComponent implements OnInit {
       details: focusItem.details,
       month: focusItem.month,
       year: focusItem.year,
-      past: focusItem.past,
+      status: focusItem.status,
     };
     this.mode = ManagementModeValues.EDIT;
   }
@@ -156,7 +157,7 @@ export class ManageShowsComponent implements OnInit {
       details: "",
       month: "January",
       year: 2019,
-      past: false,
+      status: ShowStatusValues.UPCOMING,
     };
     this.showErrors = false;
     this.switchToOverviewMode();

@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { Show } from "src/app/models/Show.model";
 import { ShowService } from "src/app/services/show.service";
+import { ShowStatusValues } from 'src/app/enums/show-status-enums';
 
 @Component({
   selector: "app-shows",
@@ -10,13 +11,13 @@ import { ShowService } from "src/app/services/show.service";
 export class ShowsComponent implements OnInit {
   public get pastShows(): Show[] {
     return this.showList.filter((show) => {
-      return show.past;
+      return show.status === ShowStatusValues.PAST;
     });
   }
 
   public get upcomingShows(): Show[] {
     return this.showList.filter((show) => {
-      return !show.past;
+      return show.status === ShowStatusValues.UPCOMING;
     });
   }
 
