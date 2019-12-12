@@ -6,5 +6,6 @@ export interface Show {
   details: string;
   month: string;
   year: number;
-  status: ShowStatusValues;
+  showStatus: ShowStatusValues;
+  dateAdded: Date;
 }

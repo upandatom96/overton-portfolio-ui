@@ -1,5 +1,5 @@
 export enum ShowStatusValues {
-  UPCOMING = "UPCOMING",
-  PAST = "PAST",
-  ARCHIVED = "ARCHIVED",
+  upcoming = "upcoming",
+  past = "past",
+  archived = "archived",
 }
