@@ -7,5 +7,5 @@ export interface Show {
   month: string;
   year: number;
   showStatus: ShowStatusValues;
-  dateAdded: Date;
+  dateAdded?: Date;
 }

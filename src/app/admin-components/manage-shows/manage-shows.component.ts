@@ -98,7 +98,7 @@ export class ManageShowsComponent implements OnInit {
       details: "",
       month: "January",
       year: 2019,
-      status: ShowStatusValues.UPCOMING,
+      showStatus: ShowStatusValues.upcoming,
     };
     this.mode = ManagementModeValues.ADD;
   }
@@ -114,7 +114,7 @@ export class ManageShowsComponent implements OnInit {
       details: focusItem.details,
       month: focusItem.month,
       year: focusItem.year,
-      status: focusItem.status,
+      showStatus: focusItem.showStatus,
     };
     this.mode = ManagementModeValues.EDIT;
   }
@@ -157,7 +157,7 @@ export class ManageShowsComponent implements OnInit {
       details: "",
       month: "January",
       year: 2019,
-      status: ShowStatusValues.UPCOMING,
+      showStatus: ShowStatusValues.upcoming,
     };
     this.showErrors = false;
     this.switchToOverviewMode();

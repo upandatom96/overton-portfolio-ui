@@ -11,13 +11,13 @@ import { ShowStatusValues } from "src/app/enums/show-status-enums";
 export class ShowsComponent implements OnInit {
   public get pastShows(): Show[] {
     return this.showList.filter((show) => {
-      return show.status === ShowStatusValues.PAST;
+      return show.showStatus === ShowStatusValues.past;
     });
   }
 
   public get upcomingShows(): Show[] {
     return this.showList.filter((show) => {
-      return show.status === ShowStatusValues.UPCOMING;
+      return show.showStatus === ShowStatusValues.upcoming;
     });
   }
 
@@ -30,6 +30,7 @@ export class ShowsComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.showService.loadShows();
   }
 
   public buildFooter(show: Show): string {
