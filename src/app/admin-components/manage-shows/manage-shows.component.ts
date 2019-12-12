@@ -84,6 +84,7 @@ export class ManageShowsComponent implements OnInit {
   ) { }
 
   public ngOnInit() {
+    this.showService.loadShows();
   }
 
   public switchToOverviewMode(): void {
@@ -139,8 +140,15 @@ export class ManageShowsComponent implements OnInit {
   private submitAdd(): void {
     const newId = (this.showList.length + 5).toString();
     this.formItem._id = newId;
-    this.showList.push(this.formItem);
-    this.concludeSubmit();
+    let response;
+    this.showService.createShow(this.formItem)
+      .subscribe((res) => response = res,
+        (error) => {
+          console.log("add show failed");
+        },
+        () => {
+          this.concludeSubmit();
+        });
   }
 
   private submitEdit(): void {
@@ -160,6 +168,7 @@ export class ManageShowsComponent implements OnInit {
       showStatus: ShowStatusValues.upcoming,
     };
     this.showErrors = false;
+    this.showService.loadShows();
     this.switchToOverviewMode();
   }
 

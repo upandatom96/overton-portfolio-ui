@@ -9,6 +9,10 @@ import { ShowStatusValues } from "src/app/enums/show-status-enums";
   styleUrls: ["./shows.component.scss"]
 })
 export class ShowsComponent implements OnInit {
+  public get ready(): boolean {
+    return this.showService.showList !== null;
+  }
+
   public get pastShows(): Show[] {
     return this.showList.filter((show) => {
       return show.showStatus === ShowStatusValues.past;

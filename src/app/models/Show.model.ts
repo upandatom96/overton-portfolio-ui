@@ -9,3 +9,7 @@ export interface Show {
   showStatus: ShowStatusValues;
   dateAdded?: Date;
 }
+
+export interface ShowResource {
+  shows: Show[];
+}
