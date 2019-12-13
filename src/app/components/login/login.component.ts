@@ -3,6 +3,9 @@ import { UserLogin } from "src/app/models/Auth.model";
 import { BooleanUtilities } from "src/app/utilities/boolean.utilities";
 import { Router } from "@angular/router";
 import { faLock } from "@fortawesome/free-solid-svg-icons";
+import { AuthService } from 'src/app/services/auth.service';
+import { isLoggedOn } from 'src/app/utilities/token-util';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: "app-login",
@@ -40,10 +43,8 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private router: Router,
-    // TODO auth service
-    // private authService: AuthService,
-    // TODO user service
-    // private userService: UserService,
+    private authService: AuthService,
+    private userService: UserService,
   ) { }
 
   ngOnInit() {
@@ -51,38 +52,30 @@ export class LoginComponent implements OnInit {
   }
 
   private checkLoginStatus() {
-    // TODO token utils
-    // const loggedIn = isLoggedOn();
-    // if (loggedIn) {
-    //   this.router.navigate(["/admin"]);
-    // } else {
-    //   this.user = {
-    //     email: "",
-    //     password: "",
-    //   };
-    //   this.ready = true;
-    // }
-    this.user = {
-      email: "",
-      password: "",
-    };
-    this.ready = true;
+    const loggedIn = isLoggedOn();
+    if (loggedIn) {
+      this.router.navigate(["/admin"]);
+    } else {
+      this.user = {
+        email: "",
+        password: "",
+      };
+      this.ready = true;
+    }
   }
 
   public login(): void {
-    // TODO auth service
-    // let response: boolean;
-    // this.authService.login(this.user)
-    //   .subscribe((res) => response = res,
-    //     (error) => {
-    //       this.error = true;
-    //     },
-    //     () => {
-    //       if (response) {
-    //         this.router.navigate(["/profile"]);
-    //       }
-    //     });
-    this.router.navigate(["/admin"]);
+    let response: boolean;
+    this.authService.login(this.user)
+      .subscribe((res) => response = res,
+        (error) => {
+          this.error = true;
+        },
+        () => {
+          if (response) {
+            this.router.navigate(["/admin"]);
+          }
+        });
   }
 
   public submitPasswordReset(): void {
@@ -93,14 +86,13 @@ export class LoginComponent implements OnInit {
   }
 
   private resetPassword() {
-    // TODO user service
-    // let response;
-    // this.resetComplete = true;
-    // this.userService.resetPasswordAsAnyoneAutomatic(this.user.email)
-    // .subscribe((res) => response = res,
-    // (error) => {
-    //   console.log("password update failed");
-    // });
+    let response;
+    this.resetComplete = true;
+    this.userService.resetPassword(this.user.email)
+      .subscribe((res) => response = res,
+        (error) => {
+          console.log("password update failed");
+        });
   }
 
 }
