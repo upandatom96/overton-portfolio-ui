@@ -28,14 +28,14 @@ export class AdminComponent implements OnInit {
       label: "Manage About",
       routerLink: "about"
     },
-    {
-      label: "Manage Resume",
-      routerLink: "resume"
-    },
-    {
-      label: "Manage Media",
-      routerLink: "media"
-    },
+    // {
+    //   label: "Manage Resume",
+    //   routerLink: "resume"
+    // },
+    // {
+    //   label: "Manage Media",
+    //   routerLink: "media"
+    // },
   ];
 
   constructor(
