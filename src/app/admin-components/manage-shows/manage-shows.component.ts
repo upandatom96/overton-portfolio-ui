@@ -121,9 +121,15 @@ export class ManageShowsComponent implements OnInit {
   }
 
   public deleteShow(id: string): void {
-    this.showList = this.showList.filter((show) => {
-      return show._id !== id;
-    });
+    let response;
+    this.showService.deleteShow(id)
+      .subscribe((res) => response = res,
+        (error) => {
+          console.log("delete show failed");
+        },
+        () => {
+          this.showService.loadShows();
+        });
   }
 
   public submit(): void {
