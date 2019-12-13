@@ -144,8 +144,6 @@ export class ManageShowsComponent implements OnInit {
   }
 
   private submitAdd(): void {
-    const newId = (this.showList.length + 5).toString();
-    this.formItem._id = newId;
     let response;
     this.showService.createShow(this.formItem)
       .subscribe((res) => response = res,
@@ -158,11 +156,15 @@ export class ManageShowsComponent implements OnInit {
   }
 
   private submitEdit(): void {
-    this.showList = this.showList.filter((show) => {
-      return show._id !== this.formItem._id;
-    });
-    this.showList.push(this.formItem);
-    this.concludeSubmit();
+    let response;
+    this.showService.updateShow(this.formItem)
+      .subscribe((res) => response = res,
+        (error) => {
+          console.log("update show failed");
+        },
+        () => {
+          this.concludeSubmit();
+        });
   }
 
   private concludeSubmit(): void {
