@@ -3,6 +3,7 @@ import { Router } from "@angular/router";
 import { RouterNav } from "src/app/models/Link.model";
 
 import { faHome, faLock, faEdit } from "@fortawesome/free-solid-svg-icons";
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: "app-admin",
@@ -40,6 +41,7 @@ export class AdminComponent implements OnInit {
 
   constructor(
     private router: Router,
+    private authService: AuthService,
   ) { }
 
   ngOnInit() {
@@ -51,6 +53,11 @@ export class AdminComponent implements OnInit {
 
   public toggleSidebar() {
     this.showSidebar = !this.showSidebar;
+  }
+
+  public logout() {
+    this.authService.logout();
+    this.router.navigate(["login"]);
   }
 
 }
