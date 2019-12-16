@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ManagementModeValues } from 'src/app/enums/mode-enums';
 import { TextService } from 'src/app/services/text.service';
 import { TextItem } from 'src/app/models/TextResource.model';
+import { BooleanUtilities } from 'src/app/utilities/boolean.utilities';
 
 @Component({
   selector: 'app-manage-text',
@@ -31,6 +32,22 @@ export class ManageTextComponent implements OnInit {
     return this.textService.textList;
   }
 
+  public get textContentError(): boolean {
+    return !BooleanUtilities.hasValue(this.formText.textContent);
+  }
+
+  public get errors(): String[] {
+    const errors: String[] = [];
+    if (this.textContentError) {
+      errors.push("Please add text content.");
+    }
+    return errors;
+  }
+
+  private get valid(): boolean {
+    return this.errors.length === 0;
+  }
+
   constructor(
     private textService: TextService,
   ) { }
@@ -54,6 +71,37 @@ export class ManageTextComponent implements OnInit {
   public switchToOverviewMode(): void {
     this.showErrors = false;
     this.mode = ManagementModeValues.OVERVIEW;
+  }
+
+  public submit(): void {
+    this.showErrors = true;
+    if (this.valid) {
+      this.submitEdit();
+    }
+  }
+
+  private submitEdit(): void {
+    let response;
+    this.concludeSubmit();
+    // this.textList.updateText(this.formText)
+    //   .subscribe((res) => response = res,
+    //     (error) => {
+    //       console.log("update text failed");
+    //     },
+    //     () => {
+    //       this.concludeSubmit();
+    //     });
+  }
+
+  private concludeSubmit(): void {
+    this.formText = {
+      _id: null,
+      areaName: "",
+      textContent: "",
+    };
+    this.showErrors = false;
+    this.textService.loadText();
+    this.switchToOverviewMode();
   }
 
 }

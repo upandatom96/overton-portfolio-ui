@@ -33,6 +33,7 @@ export class TextService {
   ) { }
 
   public loadText(): void {
+    this.textResource = null;
     this.retrieveText()
       .subscribe((res) => this.textResource = res,
         (error) => {
