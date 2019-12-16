@@ -59,6 +59,14 @@ export class TextService {
     return this.getTextForArea("INSTAGRAM_LINK", true);
   }
 
+  public get hasEmailAddress(): boolean {
+    return this.emailAddress !== null;
+  }
+
+  public get emailAddress(): string {
+    return this.getTextForArea("EMAIL_ADDRESS", true);
+  }
+
   constructor(
     private http: HttpClient,
     private restHelperService: RestHelperService,

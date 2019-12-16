@@ -53,6 +53,7 @@ export class ManageTextComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.textService.loadText();
   }
 
   public switchToEditMode(id: string): void {
