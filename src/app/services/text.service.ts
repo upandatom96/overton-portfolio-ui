@@ -19,6 +19,10 @@ export class TextService {
     return this.getTextForArea("HOME_TEXT");
   }
 
+  public get aboutMeText(): string {
+    return this.getTextForArea("ABOUT_ME_TEXT");
+  }
+
   constructor(
     private http: HttpClient,
     private restHelperService: RestHelperService,
