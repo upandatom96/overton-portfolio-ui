@@ -27,6 +27,38 @@ export class TextService {
     return this.getTextForArea("ABOUT_TEXT", false);
   }
 
+  public get hasFacebookLink(): boolean {
+    return this.facebookLink !== null;
+  }
+
+  public get facebookLink(): string {
+    return this.getTextForArea("FACEBOOK_LINK", true);
+  }
+
+  public get hasTwitterLink(): boolean {
+    return this.twitterLink !== null;
+  }
+
+  public get twitterLink(): string {
+    return this.getTextForArea("TWITTER_LINK", true);
+  }
+
+  public get hasYoutubeLink(): boolean {
+    return this.youtubeLink !== null;
+  }
+
+  public get youtubeLink(): string {
+    return this.getTextForArea("YOUTUBE_LINK", true);
+  }
+
+  public get hasInstagramLink(): boolean {
+    return this.instagramLink !== null;
+  }
+
+  public get instagramLink(): string {
+    return this.getTextForArea("INSTAGRAM_LINK", true);
+  }
+
   constructor(
     private http: HttpClient,
     private restHelperService: RestHelperService,
