@@ -28,6 +28,7 @@ import { ManageResumeComponent } from "./admin-components/manage-resume/manage-r
 import { ManageMediaComponent } from "./admin-components/manage-media/manage-media.component";
 import { ManageHomeComponent } from "./admin-components/manage-home/manage-home.component";
 import { ManageShowsComponent } from "./admin-components/manage-shows/manage-shows.component";
+import { ManageTextComponent } from './admin-components/manage-text/manage-text.component';
 
 @NgModule({
   declarations: [
@@ -54,6 +55,7 @@ import { ManageShowsComponent } from "./admin-components/manage-shows/manage-sho
     ManageMediaComponent,
     ManageHomeComponent,
     ManageShowsComponent,
+    ManageTextComponent,
   ],
   imports: [
     BrowserModule,

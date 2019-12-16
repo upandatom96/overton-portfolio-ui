@@ -18,6 +18,10 @@ export class AdminComponent implements OnInit {
   public showSidebar = true;
   public managementLinks: RouterNav[] = [
     {
+      label: "Manage Text",
+      routerLink: "text"
+    },
+    {
       label: "Manage Home",
       routerLink: "home"
     },
@@ -43,13 +47,6 @@ export class AdminComponent implements OnInit {
     private router: Router,
     private authService: AuthService,
   ) { }
-
-  ngOnInit() {
-  }
-
-  public manageHome() {
-    this.router.navigateByUrl("/admin/(manage:home)");
-  }
 
   public toggleSidebar() {
     this.showSidebar = !this.showSidebar;
