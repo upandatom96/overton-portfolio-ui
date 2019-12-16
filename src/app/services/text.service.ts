@@ -41,6 +41,11 @@ export class TextService {
         });
   }
 
+  public updateText(text: TextItem): Observable<any> {
+    const url = this.restHelperService.buildRestUrl("text");
+    return this.http.put(url, text, this.restHelperService.headersWithAuth) as Observable<any>;
+  }
+
   private retrieveText(): Observable<any> {
     const url = this.restHelperService.buildRestUrl("text");
     return this.http.get(url, this.restHelperService.headersWithAuth) as Observable<any>;

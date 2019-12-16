@@ -82,15 +82,14 @@ export class ManageTextComponent implements OnInit {
 
   private submitEdit(): void {
     let response;
-    this.concludeSubmit();
-    // this.textList.updateText(this.formText)
-    //   .subscribe((res) => response = res,
-    //     (error) => {
-    //       console.log("update text failed");
-    //     },
-    //     () => {
-    //       this.concludeSubmit();
-    //     });
+    this.textService.updateText(this.formText)
+      .subscribe((res) => response = res,
+        (error) => {
+          console.log("update text failed");
+        },
+        () => {
+          this.concludeSubmit();
+        });
   }
 
   private concludeSubmit(): void {
