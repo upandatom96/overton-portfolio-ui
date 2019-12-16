@@ -22,16 +22,8 @@ export class AdminComponent {
       routerLink: "text"
     },
     {
-      label: "Manage Home",
-      routerLink: "home"
-    },
-    {
       label: "Manage Shows",
       routerLink: "shows"
-    },
-    {
-      label: "Manage About",
-      routerLink: "about"
     },
     // {
     //   label: "Manage Resume",
