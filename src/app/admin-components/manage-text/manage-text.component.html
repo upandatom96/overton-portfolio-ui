@@ -1,3 +1,107 @@
-<p>
-  manage-text works!
-</p>
+<section id="manage-text" class="my-3" *ngIf="admin">
+  <div class="container">
+    <div class="row admin-header">
+      <div class="col-md-12">
+        <h3 class="display-4 text-center">
+          <span *ngIf="overviewActive">
+            Text Overview
+          </span>
+          <span *ngIf="editActive">
+            Edit Text
+          </span>
+        </h3>
+        <button
+          *ngIf="editActive"
+          (click)="switchToOverviewMode()"
+          class="btn btn-dark btn-block"
+        >
+          Return to Overview
+        </button>
+        <hr />
+      </div>
+    </div>
+    <ng-container *ngIf="overviewActive">
+      <div class="row admin-overview" *ngIf="textReady; else loading">
+        <div class="col-md-12">
+          <table
+            class="table table-striped"
+            *ngIf="textList.length > 0; else none"
+          >
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Title</th>
+                <th scope="col">Details</th>
+                <th scope="col">Edit</th>
+              </tr>
+            </thead>
+            <tbody>
+              <ng-container *ngFor="let text of textList; let i = index">
+                <tr>
+                  <th scope="row">{{ i + 1 }}</th>
+                  <td>{{ text.areaName }}</td>
+                  <td>
+                    <app-modal-trigger-button
+                      [modalBoxId]="'details-text-' + text._id"
+                    >
+                      More
+                    </app-modal-trigger-button>
+                  </td>
+                  <td>
+                    <button
+                      class="btn btn-warning"
+                      (click)="switchToEditMode(text._id)"
+                    >
+                      Edit
+                    </button>
+                  </td>
+                </tr>
+                <app-modal-box-basic
+                  [modalBoxId]="'details-text-' + text._id"
+                  [modalTitle]="text.areaName"
+                >
+                  {{ text.textContent }}
+                </app-modal-box-basic>
+              </ng-container>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </ng-container>
+    <ng-container *ngIf="editActive">
+      <section id="form-body">
+        <div id="form-selections" class="row">
+          <div class="col-md-12">
+            <!-- START FORM -->
+
+            <!-- AREA NAME -->
+            <h3>{{ formText.areaName }}</h3>
+
+            <!-- TEXT CONTENT -->
+            <div class="form-group">
+              <label for="textContent"> Text Content </label>
+              <textarea
+                name="textContent"
+                type="text"
+                class="form-control"
+                [(ngModel)]="formText.textContent"
+                placeholder="Text"
+              >
+              </textarea>
+            </div>
+          </div>
+          <!-- END FORM -->
+        </div>
+        <app-errors-report-row
+          class="mt-3"
+          [errors]="errors"
+          [showErrors]="showErrors"
+        ></app-errors-report-row>
+
+        <button disabled class="btn btn-success btn-block mt-3" (click)="submit()">
+          Save Text
+        </button>
+      </section>
+    </ng-container>
+  </div>
+</section>

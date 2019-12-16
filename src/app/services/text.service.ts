@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { RestHelperService } from './rest-helper.service';
 import { Observable } from 'rxjs';
 import { BooleanUtilities } from '../utilities/boolean.utilities';
-import { TextResource } from '../models/TextResource.model';
+import { TextResource, TextItem } from '../models/TextResource.model';
 
 @Injectable({
   providedIn: 'root'
@@ -13,6 +13,10 @@ export class TextService {
 
   public get textReady(): boolean {
     return !BooleanUtilities.isNullOrUndefined(this.textResource);
+  }
+
+  public get textList(): TextItem[] {
+    return this.textResource.text;
   }
 
   public get homeHeaderText(): string {

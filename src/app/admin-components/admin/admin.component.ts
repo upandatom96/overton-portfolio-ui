@@ -10,7 +10,7 @@ import { AuthService } from 'src/app/services/auth.service';
   templateUrl: "./admin.component.html",
   styleUrls: ["./admin.component.scss"]
 })
-export class AdminComponent implements OnInit {
+export class AdminComponent {
   public faHome = faHome;
   public faLock = faLock;
   public faEdit = faEdit;
