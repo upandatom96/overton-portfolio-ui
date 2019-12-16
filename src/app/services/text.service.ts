@@ -20,7 +20,7 @@ export class TextService {
   }
 
   public get aboutMeText(): string {
-    return this.getTextForArea("ABOUT_ME_TEXT");
+    return this.getTextForArea("ABOUT_TEXT");
   }
 
   constructor(
