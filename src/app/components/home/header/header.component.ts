@@ -7,7 +7,7 @@ import { TextService } from 'src/app/services/text.service';
   templateUrl: "./header.component.html",
   styleUrls: ["./header.component.scss"]
 })
-export class HeaderComponent{
+export class HeaderComponent {
   public faFilm = faFilm;
   public faMicrophone = faMicrophone;
   public faMusic = faMusic;
@@ -17,7 +17,7 @@ export class HeaderComponent{
   }
 
   public get homeText(): string {
-    return "hello";
+    return this.textService.homeHeaderText;
   }
 
   constructor(
