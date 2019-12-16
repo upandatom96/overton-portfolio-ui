@@ -39,16 +39,9 @@
           <div id="bio">
             <div class="container">
               <div class="row lead body-text px-2 bigger-text">
-                <p>
-                  Welcome! Andrew Overton is an actor based out of Baltimore,
-                  Maryland.
-                </p>
-                <p>
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                  Dicta magni excepturi sapiente? Delectus, ipsum, enim eveniet
-                  pariatur, culpa molestias rem veniam hic aspernatur sapiente
-                  provident!
-                </p>
+                <ng-container *ngIf="textReady; else loading">
+                  {{ homeText }}
+                </ng-container>
               </div>
             </div>
           </div>
@@ -57,3 +50,7 @@
     </div>
   </div>
 </header>
+
+<ng-template #loading>
+  <app-loading></app-loading>
+</ng-template>

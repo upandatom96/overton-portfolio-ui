@@ -23,7 +23,7 @@ export class TextService {
     this.retrieveText()
       .subscribe((res) => this.textResource = res,
         (error) => {
-          console.log("send email failed");
+          console.log("load text failed");
         });
   }
 
