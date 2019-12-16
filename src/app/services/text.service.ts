@@ -20,11 +20,11 @@ export class TextService {
   }
 
   public get homeHeaderText(): string {
-    return this.getTextForArea("HOME_TEXT");
+    return this.getTextForArea("HOME_TEXT", false);
   }
 
   public get aboutMeText(): string {
-    return this.getTextForArea("ABOUT_TEXT");
+    return this.getTextForArea("ABOUT_TEXT", false);
   }
 
   constructor(
@@ -51,9 +51,13 @@ export class TextService {
     return this.http.get(url, this.restHelperService.headersWithAuth) as Observable<any>;
   }
 
-  private getTextForArea(textArea: string) {
+  private getTextForArea(textArea: string, optional: boolean) {
     if (!this.textReady) {
-      return "loading...";
+      if (optional) {
+        return null;
+      } else {
+        return "loading...";
+      }
     }
     const matchingText = this.textResource.text.find((text) => {
       return text.areaName === textArea;
@@ -61,7 +65,11 @@ export class TextService {
     if (matchingText) {
       return matchingText.textContent;
     } else {
-      return "Error loading text :(";
+      if (optional) {
+        return null;
+      } else {
+        return "Error loading text :(";
+      }
     }
   }
 }
