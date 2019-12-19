@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row text-center">
       <div class="col-md-8 mx-auto">
-        <p class="bigger-text" *ngIf="hasEmailAddress">
+        <p class="bigger-text" *ngIf="textService.hasEmailAddress">
           <fa-icon [icon]="faEnvelope"></fa-icon>
           {{textService.emailAddress}}
         </p>
