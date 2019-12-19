@@ -5,5 +5,6 @@ export interface TextResource {
 export interface TextItem {
   _id: string;
   areaName: string;
-  textContent: string;
+  isOptional: boolean;
+  textContent?: string;
 }
