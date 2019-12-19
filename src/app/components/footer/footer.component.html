@@ -2,9 +2,9 @@
   <div class="container">
     <div class="row text-center">
       <div class="col-md-8 mx-auto">
-        <p class="bigger-text">
+        <p class="bigger-text" *ngIf="hasEmailAddress">
           <fa-icon [icon]="faEnvelope"></fa-icon>
-          andrewgregoryoverton@gmail.com
+          {{textService.emailAddress}}
         </p>
         <button
           class="btn btn-dark btn-lg py-2"
@@ -14,19 +14,32 @@
           Contact Andrew
         </button>
         <div class="d-flex justify-content-around pt-3 bigger-text">
-          <a href="https://www.facebook.com/andrew.overton.77" target="_blank">
+          <a
+            [href]="textService.facebookLink"
+            target="_blank"
+            *ngIf="textService.hasFacebookLink"
+          >
             <fa-icon [icon]="faFacebook"></fa-icon>
           </a>
-          <a href="https://www.twitter.com" target="_blank">
+          <a
+            [href]="textService.twitterLink"
+            target="_blank"
+            *ngIf="textService.hasTwitterLink"
+          >
             <fa-icon [icon]="faTwitter"></fa-icon>
           </a>
           <a
-            href="https://www.youtube.com/channel/UCu2KCEPHr9KQTtoQRfJ0nXw"
+            [href]="textService.youtubeLink"
             target="_blank"
+            *ngIf="textService.hasYoutubeLink"
           >
             <fa-icon [icon]="faYoutube"></fa-icon>
           </a>
-          <a href="https://www.instagram.com/andrewoverton/" target="_blank">
+          <a
+            [href]="textService.instagramLink"
+            target="_blank"
+            *ngIf="textService.hasInstagramLink"
+          >
             <fa-icon [icon]="faInstagram"></fa-icon>
           </a>
         </div>

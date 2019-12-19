@@ -28,7 +28,7 @@ export class TextService {
   }
 
   public get hasFacebookLink(): boolean {
-    return this.facebookLink !== null;
+    return !BooleanUtilities.isNullOrUndefined(this.facebookLink);
   }
 
   public get facebookLink(): string {
@@ -36,7 +36,7 @@ export class TextService {
   }
 
   public get hasTwitterLink(): boolean {
-    return this.twitterLink !== null;
+    return !BooleanUtilities.isNullOrUndefined(this.twitterLink);
   }
 
   public get twitterLink(): string {
@@ -44,7 +44,7 @@ export class TextService {
   }
 
   public get hasYoutubeLink(): boolean {
-    return this.youtubeLink !== null;
+    return !BooleanUtilities.isNullOrUndefined(this.youtubeLink);
   }
 
   public get youtubeLink(): string {
@@ -52,7 +52,7 @@ export class TextService {
   }
 
   public get hasInstagramLink(): boolean {
-    return this.instagramLink !== null;
+    return !BooleanUtilities.isNullOrUndefined(this.instagramLink);
   }
 
   public get instagramLink(): string {
@@ -60,7 +60,7 @@ export class TextService {
   }
 
   public get hasEmailAddress(): boolean {
-    return this.emailAddress !== null;
+    return !BooleanUtilities.isNullOrUndefined(this.emailAddress);
   }
 
   public get emailAddress(): string {

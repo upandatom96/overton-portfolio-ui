@@ -4,6 +4,7 @@ import { faFacebook, faTwitter, faYoutube, faInstagram } from "@fortawesome/free
 import { EmailMessage } from 'src/app/models/EmailMessage.model';
 import { MailService } from 'src/app/services/mail.service';
 import { BooleanUtilities } from 'src/app/utilities/boolean.utilities';
+import { TextService } from 'src/app/services/text.service';
 
 @Component({
   selector: "app-footer",
@@ -34,6 +35,7 @@ export class FooterComponent implements OnInit {
 
   constructor(
     private mailService: MailService,
+    public textService: TextService,
   ) { }
 
   public ngOnInit() {
