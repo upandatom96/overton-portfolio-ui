@@ -79,7 +79,11 @@
 
             <!-- TEXT CONTENT -->
             <div class="form-group">
-              <label for="textContent"> Text Content </label>
+              <label for="textContent">
+                Text Content -
+                <span *ngIf="showAsOptional">Optional</span>
+                <span *ngIf="!showAsOptional">Not Optional</span>
+              </label>
               <textarea
                 name="textContent"
                 type="text"

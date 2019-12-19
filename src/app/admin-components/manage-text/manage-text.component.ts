@@ -16,6 +16,10 @@ export class ManageTextComponent implements OnInit {
 
   public formText: TextItem;
 
+  public showAsOptional(): boolean {
+    return this.formText && this.formText.isOptional;
+  }
+
   public get overviewActive(): boolean {
     return this.mode === ManagementModeValues.OVERVIEW;
   }
@@ -33,7 +37,7 @@ export class ManageTextComponent implements OnInit {
   }
 
   public get textContentError(): boolean {
-    return !BooleanUtilities.hasValue(this.formText.textContent);
+    return !this.formText.isOptional && !BooleanUtilities.hasValue(this.formText.textContent);
   }
 
   public get errors(): String[] {
@@ -65,6 +69,7 @@ export class ManageTextComponent implements OnInit {
       _id: focusItem._id,
       areaName: focusItem.areaName,
       textContent: focusItem.textContent,
+      isOptional: focusItem.isOptional,
     };
     this.mode = ManagementModeValues.EDIT;
   }
@@ -98,6 +103,7 @@ export class ManageTextComponent implements OnInit {
       _id: null,
       areaName: "",
       textContent: "",
+      isOptional: false,
     };
     this.showErrors = false;
     this.textService.loadText();
