@@ -26,7 +26,9 @@ import { MenuComponent } from "./admin-components/menu/menu.component";
 import { ManageResumeComponent } from "./admin-components/manage-resume/manage-resume.component";
 import { ManageMediaComponent } from "./admin-components/manage-media/manage-media.component";
 import { ManageShowsComponent } from "./admin-components/manage-shows/manage-shows.component";
-import { ManageTextComponent } from './admin-components/manage-text/manage-text.component';
+import { ManageTextComponent } from "./admin-components/manage-text/manage-text.component";
+
+import { QuillModule } from "ngx-quill";
 
 @NgModule({
   declarations: [
@@ -58,7 +60,8 @@ import { ManageTextComponent } from './admin-components/manage-text/manage-text.
     SimpleComponentsModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    QuillModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]
