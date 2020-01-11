@@ -5,7 +5,7 @@
         <h1 class="display-2 header-text">About</h1>
         <div class="body-text">
           <ng-container *ngIf="textReady; else loading">
-            {{aboutMeText}}
+            <app-quill-view [content]="aboutMeText"></app-quill-view>
           </ng-container>
         </div>
       </div>
