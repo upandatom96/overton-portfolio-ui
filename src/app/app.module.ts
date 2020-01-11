@@ -29,6 +29,7 @@ import { ManageShowsComponent } from "./admin-components/manage-shows/manage-sho
 import { ManageTextComponent } from "./admin-components/manage-text/manage-text.component";
 
 import { QuillModule } from "ngx-quill";
+import { QuillDefaultComponent } from './components/quill-default/quill-default.component';
 
 @NgModule({
   declarations: [
@@ -54,6 +55,7 @@ import { QuillModule } from "ngx-quill";
     ManageMediaComponent,
     ManageShowsComponent,
     ManageTextComponent,
+    QuillDefaultComponent,
   ],
   imports: [
     BrowserModule,
