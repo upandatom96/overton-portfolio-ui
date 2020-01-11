@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ManagementModeValues } from 'src/app/enums/mode-enums';
 import { TextService } from 'src/app/services/text.service';
 import { TextItem } from 'src/app/models/TextResource.model';
 import { BooleanUtilities } from 'src/app/utilities/boolean.utilities';
+import { QuillDefaultComponent } from 'src/app/components/quill-default/quill-default.component';
 
 @Component({
   selector: 'app-manage-text',
@@ -10,6 +11,8 @@ import { BooleanUtilities } from 'src/app/utilities/boolean.utilities';
   styleUrls: ['./manage-text.component.scss']
 })
 export class ManageTextComponent implements OnInit {
+  @ViewChild(QuillDefaultComponent) public quillDefaultComponent: QuillDefaultComponent;
+
   public showErrors = false;
   public admin = true;
   public mode: ManagementModeValues = ManagementModeValues.OVERVIEW;
@@ -80,6 +83,7 @@ export class ManageTextComponent implements OnInit {
   }
 
   public submit(): void {
+    this.formText.textContent = this.quillDefaultComponent.content;
     this.showErrors = true;
     if (this.valid) {
       this.submitEdit();

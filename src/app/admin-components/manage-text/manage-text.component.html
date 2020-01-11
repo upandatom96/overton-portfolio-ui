@@ -84,6 +84,7 @@
                 <span *ngIf="showAsOptional">Optional</span>
                 <span *ngIf="!showAsOptional">Not Optional</span>
               </label>
+              <app-quill-default [content]="formText.textContent"></app-quill-default>
               <textarea
                 name="textContent"
                 type="text"

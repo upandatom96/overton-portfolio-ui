@@ -40,7 +40,7 @@
             <div class="container">
               <div class="row lead body-text px-2 bigger-text">
                 <ng-container *ngIf="textReady; else loading">
-                  {{ homeText }}
+                  <app-quill-view [content]="homeText"></app-quill-view>
                 </ng-container>
               </div>
             </div>

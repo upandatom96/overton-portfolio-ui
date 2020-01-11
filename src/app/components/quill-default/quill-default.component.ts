@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-quill-default',
@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class QuillDefaultComponent {
   public modules = {}
-  public content = ''
+  @Input() public content = ''
 
   constructor() {
     this.setupModules();
