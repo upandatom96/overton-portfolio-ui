@@ -30,6 +30,7 @@ import { ManageTextComponent } from "./admin-components/manage-text/manage-text.
 
 import { QuillModule } from "ngx-quill";
 import { QuillDefaultComponent } from './components/quill-default/quill-default.component';
+import { QuillViewComponent } from './components/quill-view/quill-view.component';
 
 @NgModule({
   declarations: [
@@ -56,6 +57,7 @@ import { QuillDefaultComponent } from './components/quill-default/quill-default.
     ManageShowsComponent,
     ManageTextComponent,
     QuillDefaultComponent,
+    QuillViewComponent,
   ],
   imports: [
     BrowserModule,

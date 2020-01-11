@@ -6,31 +6,26 @@ import { Component } from '@angular/core';
   styleUrls: ['./quill-default.component.scss']
 })
 export class QuillDefaultComponent {
-  blured = false
-  focused = false
+  public modules = {}
+  public content = ''
 
-  created(event) {
-    // tslint:disable-next-line:no-console
-    console.log('editor-created', event)
+  constructor() {
+    this.setupModules();
   }
 
-  changedEditor(event) {
-    // tslint:disable-next-line:no-console
-    console.log('editor-change', event)
-  }
+  private setupModules() {
+    this.modules = {
+      'toolbar': [
+        ['bold', 'italic', 'underline', 'strike'],        // toggled buttons
 
-  focus($event) {
-    // tslint:disable-next-line:no-console
-    console.log('focus', $event)
-    this.focused = true
-    this.blured = false
-  }
+        [{ 'header': 1 }, { 'header': 2 }],               // custom button values
+        [{ 'list': 'ordered' }, { 'list': 'bullet' }],
 
-  blur($event) {
-    // tslint:disable-next-line:no-console
-    console.log('blur', $event)
-    this.focused = false
-    this.blured = true
+        [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
+
+        ['link']                         // link and image, video
+      ]
+    }
   }
 
 }
