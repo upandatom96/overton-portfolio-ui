@@ -80,12 +80,15 @@
             <!-- TEXT CONTENT -->
             <div class="form-group">
               <label for="textContent">
-                Text Content -
-                <span *ngIf="showAsOptional">Optional</span>
-                <span *ngIf="!showAsOptional">Not Optional</span>
+                <span *ngIf="formText.isQuill">Advanced</span>
+                <span *ngIf="!formText.isQuill">Plain</span>
+                Text Content
+                <span *ngIf="showAsOptional">(Optional)</span>
+                <span *ngIf="!showAsOptional">(Not Optional)</span>
               </label>
-              <app-quill-default [content]="formText.textContent"></app-quill-default>
-              <textarea
+              <app-quill-default [content]="formText.textContent" *ngIf="formText.isQuill">
+              </app-quill-default>
+              <textarea *ngIf="!formText.isQuill"
                 name="textContent"
                 type="text"
                 class="form-control"

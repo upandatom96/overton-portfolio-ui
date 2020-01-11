@@ -7,4 +7,5 @@ export interface TextItem {
   areaName: string;
   isOptional: boolean;
   textContent?: string;
+  isQuill?: boolean;
 }
