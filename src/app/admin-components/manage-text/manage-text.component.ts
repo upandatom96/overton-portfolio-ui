@@ -73,6 +73,7 @@ export class ManageTextComponent implements OnInit {
       areaName: focusItem.areaName,
       textContent: focusItem.textContent,
       isOptional: focusItem.isOptional,
+      isQuill: focusItem.isQuill
     };
     this.mode = ManagementModeValues.EDIT;
   }
@@ -108,6 +109,7 @@ export class ManageTextComponent implements OnInit {
       areaName: "",
       textContent: "",
       isOptional: false,
+      isQuill: false,
     };
     this.showErrors = false;
     this.textService.loadText();

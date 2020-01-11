@@ -60,7 +60,30 @@
                   [modalBoxId]="'details-text-' + text._id"
                   [modalTitle]="text.areaName"
                 >
-                  {{ text.textContent }}
+                  <p>
+                    <strong>
+                      Optional:
+                    </strong>
+                    {{ text.isOptional }}
+                  </p>
+                  <p>
+                    <strong>
+                      Advanced:
+                    </strong>
+                    {{ text.isQuill }}
+                  </p>
+                  <hr />
+                  <p>
+                    Text:
+                  </p>
+                  <ng-container *ngIf="text.isQuill">
+                    <app-quill-view
+                      [content]="text.textContent"
+                    ></app-quill-view>
+                  </ng-container>
+                  <ng-container *ngIf="!text.isQuill">
+                    {{ text.textContent }}
+                  </ng-container>
                 </app-modal-box-basic>
               </ng-container>
             </tbody>
@@ -86,9 +109,13 @@
                 <span *ngIf="showAsOptional">(Optional)</span>
                 <span *ngIf="!showAsOptional">(Not Optional)</span>
               </label>
-              <app-quill-default [content]="formText.textContent" *ngIf="formText.isQuill">
+              <app-quill-default
+                [content]="formText.textContent"
+                *ngIf="formText.isQuill"
+              >
               </app-quill-default>
-              <textarea *ngIf="!formText.isQuill"
+              <textarea
+                *ngIf="!formText.isQuill"
                 name="textContent"
                 type="text"
                 class="form-control"
