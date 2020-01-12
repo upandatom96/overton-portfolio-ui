@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { QuillDefaultComponent } from './quill-default.component';
+import { FormsModule } from '@angular/forms';
+import { QuillModule } from 'ngx-quill';
+import { SimpleComponentsModule } from 'src/app/simple-components/simple-components.module';
 
 describe('QuillDefaultComponent', () => {
   let component: QuillDefaultComponent;
@@ -8,9 +11,10 @@ describe('QuillDefaultComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ QuillDefaultComponent ]
+      declarations: [QuillDefaultComponent],
+      imports: [FormsModule, QuillModule.forRoot(), SimpleComponentsModule]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

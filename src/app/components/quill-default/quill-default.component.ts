@@ -6,8 +6,12 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./quill-default.component.scss']
 })
 export class QuillDefaultComponent {
-  public modules = {}
+  public modules = null;
   @Input() public content = ''
+
+  public get ready(): any {
+    return this.modules !== null;
+  }
 
   constructor() {
     this.setupModules();
