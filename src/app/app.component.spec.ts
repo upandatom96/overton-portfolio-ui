@@ -5,6 +5,8 @@ import { AppComponent } from "./app.component";
 import { NavbarComponent } from "./components/navbar/navbar.component";
 import { FooterComponent } from "./components/footer/footer.component";
 import { SimpleComponentsModule } from "./simple-components/simple-components.module";
+import { FormsModule } from '@angular/forms';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 describe("AppComponent", () => {
   beforeEach(async(() => {
@@ -16,7 +18,9 @@ describe("AppComponent", () => {
       ],
       imports: [
         RouterTestingModule,
-        SimpleComponentsModule
+        SimpleComponentsModule,
+        FormsModule,
+        HttpClientTestingModule,
       ]
     }).compileComponents();
   }));
