@@ -11,7 +11,7 @@ import { QuillDefaultComponent } from 'src/app/components/quill-default/quill-de
   styleUrls: ['./manage-text.component.scss']
 })
 export class ManageTextComponent implements OnInit {
-  @ViewChild(QuillDefaultComponent) public quillDefaultComponent: QuillDefaultComponent;
+  @ViewChild(QuillDefaultComponent, null) public quillDefaultComponent: QuillDefaultComponent;
 
   public showErrors = false;
   public admin = true;
