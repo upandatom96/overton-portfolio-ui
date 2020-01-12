@@ -1,6 +1,6 @@
 <section id="shows" class="py-2 bg-custom-yellow">
   <div class="container">
-    <div class="row" *ngIf="ready">
+    <div class="row" *ngIf="ready; else loading">
       <div class="col-md-6">
         <h2 class="text-center display-2 header-text">
           Upcoming Shows
@@ -36,3 +36,7 @@
     </div>
   </div>
 </section>
+
+<ng-template #loading>
+  <app-loading></app-loading>
+</ng-template>
