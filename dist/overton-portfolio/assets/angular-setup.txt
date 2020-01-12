@@ -1,0 +1,238 @@
+I. Setup App
+	A. Generate App
+		1. in your projects folder, open git bash
+		2. to start the app run:
+			ng new <app-name> --style=scss
+		3. to enter the app run:
+			cd <app-name>
+		4. to fix problems (some manual) run:
+			npm fix
+	B. Setup Git and GitHub
+		1. to add files you've changed run:
+			git add .
+		2. commit your change with:
+			git commit -m "<commit message>"
+		3. go to GitHub in your browser and create a repo for the app
+		4. back in bash, run:
+		5. in bash, run:
+			git remote add origin git@github.com:<git username>/<git repo>.git
+		6. run:
+			git push -u origin master
+	C. Setup Bootstrap 4 and Other Installs
+		1. open the project in visual studio code by running:
+			code .
+		2. to install run:
+			npm install bootstrap jquery popper.js @fortawesome/fontawesome-svg-core @fortawesome/free-solid-svg-icons @fortawesome/angular-fontawesome
+		3. resolve any audit problems and dependencies
+		4. add relevant paths to angular.json:
+            "styles": [
+              "./node_modules/bootstrap/dist/css/bootstrap.css",
+              "src/styles.scss"
+            ],
+            "scripts": [
+              "./node_modules/jquery/dist/jquery.js",
+              "./node_modules/popper.js/dist/umd/popper.js",
+              "./node_modules/bootstrap/dist/js/bootstrap.js"
+            ]
+	D. Make simple component module
+		1. to generate module run:
+			ng g m simple-components
+		2. bring in simple components to app.module.ts as an import
+			import { SimpleComponentsModule } from "./simple-components/simple-components.module";
+		3. in app.module.ts add to imports array:
+			SimpleComponentsModule,
+		3. in simple-components.module.ts add import:
+			import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
+		4. in app.module.ts add to imports array:
+			FontAwesomeModule,
+	E. Setup linting
+		1. open tslint.json
+		2. add or replace quotemark rule:
+		    "quotemark": [
+			  true,
+			  "double"
+			],
+		3. to lint all the folders run:
+			ng lint --fix
+II. Setup custom bootstrap and finishing touches
+	A. Create variables
+		1. in src create a new file called "_variables.scss"
+		2. add to the variables file:
+			$icon-font-path: "../node_modules/bootstrap-sass/assets/fonts/bootstrap/";
+
+			$theme-colors: (
+			  "custom-blue": #bae1ff,
+			  "custom-red": #ffb3ba,
+			  "custom-yellow": #ffffba,
+			  "custom-orange": #ffdfba,
+			  "custom-green": #baffc9,
+			  "custom-grey": #8bb4b6
+			);
+		3. open styles.scss and add to it:
+			@import "variables";
+			@import "../node_modules/bootstrap/scss/bootstrap";
+	B. Add compatibility
+		1. open polyfill.ts
+		2. uncomment the lines that deal with IE so your project will work in IE
+		3. depending on your choice / project, you may have to run npm commands as well
+III. Test your setup
+	A. build sample app component
+		1. open app.component.html
+		2. replace all contents with:
+			<div class="card" style="width: 18rem;">
+			  <div class="card-body">
+				<h5 class="card-title"><fa-icon [icon]="faLock"></fa-icon>Card title</h5>
+				<p class="card-text">
+				  Some quick example text to build on the card title and make up the bulk of
+				  the card's content.
+				</p>
+				<a href="#" class="btn btn-custom-red">Go somewhere</a>
+			  </div>
+			</div>
+		3. open app.component.ts
+		4. add import:
+			import { faLock } from "@fortawesome/free-solid-svg-icons";
+		5. add a local declaration (on the line below "export class AppComponent {")
+			faLock = faLock
+	B. check your sample
+		1. in bash, run:
+			ng serve
+		2. after the app is compiled, open a browser and navigate to localhost:4200
+		3. confirm that:
+			i. you see a bootstrap 4 card on the page
+			ii. you see a lock icon on the page
+			iii. you see the button is a pastel red color
+		4. if those three things are correct, your setup is correct
+IV. setup basic components
+	A. generate components
+		1. in bash, generate the components by running:
+			ng generate component components/home
+			ng g c components/info
+			ng g c components/navbar
+			ng g c ocmponents/footer
+		2. open app.component.html and replace the contents with:
+				<app-navbar></app-navbar>
+				<app-home></app-home>
+				<app-info></app-info>
+				<app-footer></app-footer>
+		3. check in the browser that all components are appearing
+	B. setup HomeComponent
+		1. open up home.component.html and replace the contents with:
+			<section id="home-section">
+			  <div class="container">
+				<div class="row">
+				  <h1 class="display-1">
+					Welcome Home
+				  </h1>
+				</div>
+				<p class="lead">
+				  This is the home page.
+				</p>
+			  </div>
+			</section>
+	C. setup InfoComponent
+		1. open up info.component.html and replace the contents with:
+			<section id="info-section">
+			  <div class="container">
+				<div class="row">
+				  <h1 class="display-1">
+					Information
+				  </h1>
+				</div>
+				<p class="lead">
+				  This page contains information about the website.
+				</p>
+			  </div>
+			</section>
+	D. setup FooterComponent
+		1. open up footer.component.html and replace the contents with:
+			<footer id="main-footer" class="text-center p-4 bg-primary text-white">
+			  <div class="container">
+				<div class="row">
+				  <div class="col">
+					<p>Copyright © {{ year }} CallananConcepts</p>
+				  </div>
+				</div>
+			  </div>
+			</footer>
+		2. open up footer.component.ts and replace the content inside the class with:
+		  year: any;
+
+		  ngOnInit() {
+			this.year = new Date().getFullYear();
+		  }
+V. setup routing
+	A. create routing app
+		1. generate routing app by running:
+			ng generate module app-routing --flat --module=app
+		2. open up app-routing.module.ts
+		3. remove CommonModule
+		4. import routing:
+			import { RouterModule, Routes } from "@angular/router";
+		5. import Home and Info
+			import { HomeComponent } from "./components/home/home.component";
+			import { InfoComponent } from "./components/info/info.component";
+		6. make a variable for routes above the @NgModule declaration:
+			const routes: Routes = [
+			  { path: "", component: HomeComponent },
+			  { path: "info", component: InfoComponent },
+			  { path: "**", component: HomeComponent },
+			];
+		7. remove "declarations: []" and existing "imports: []"
+		8. add to @NgModule:
+				exports: [RouterModule],
+				imports: [RouterModule.forRoot(routes, {useHash: true})],
+		9. open app.component.html and replace contents with:
+			<app-navbar></app-navbar>
+			<router-outlet></router-outlet>
+			<app-footer></app-footer>
+	B. setup navbar for routing
+		1. open navbar.component.html and replace the contents with:
+			<nav class="navbar navbar-dark bg-primary navbar-expand-lg">
+			  <a class="navbar-brand" routerLink="/">
+				Showcase
+			  </a>
+			  <button
+				class="navbar-toggler collapsed"
+				type="button"
+				data-toggle="collapse"
+				data-target="#navbarSupportedContent"
+				aria-controls="navbarSupportedContent"
+				aria-expanded="false"
+				aria-label="Toggle navigation"
+			  >
+				<span class="navbar-toggler-icon"> </span>
+			  </button>
+
+			  <div class="navbar-collapse collapse">
+				<ul class="navbar-nav ml-auto">
+				  <li class="nav-item">
+					<a class="nav-link" routerLink="/">
+					  HOME
+					</a>
+				  </li>
+				  <li class="nav-item">
+					<a class="nav-link" routerLink="/info">
+					  INFO
+					</a>
+				  </li>
+				</ul>
+			  </div>
+			</nav>
+		2. in the browser, test that you can navigate between the info and home components
+		3. in the browser, test that if you reduce the browser side to mobile view, the nav items collapse
+VI. advanced
+	A. unit tests
+		1. run:
+			ng test
+		2. change tests to pass
+	B. e2e tests
+		1. run:
+			ng e2e
+		2. change tests to pass
+	C. simple scripts
+		1. open angular.json
+		2. add a script to build the production app:
+			"build-for-prod": "ng build --prod --base-href=<base href for deployed site>",
+		3. add a script to deploy the production app:
+			"prod-deploy": "scp -r dist/* <ftp account>:<deployed file location>"
