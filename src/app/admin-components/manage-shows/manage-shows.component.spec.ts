@@ -3,6 +3,7 @@ import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 import { ManageShowsComponent } from "./manage-shows.component";
 import { SimpleComponentsModule } from "src/app/simple-components/simple-components.module";
 import { FormsModule } from "@angular/forms";
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 describe("ManageShowsComponent", () => {
   let component: ManageShowsComponent;
@@ -11,7 +12,7 @@ describe("ManageShowsComponent", () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ManageShowsComponent],
-      imports: [SimpleComponentsModule, FormsModule],
+      imports: [SimpleComponentsModule, FormsModule, HttpClientTestingModule],
     })
       .compileComponents();
   }));
