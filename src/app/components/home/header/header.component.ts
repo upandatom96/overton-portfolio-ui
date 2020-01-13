@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { faMicrophone, faFilm, faMusic } from "@fortawesome/free-solid-svg-icons";
-import { TextService } from 'src/app/services/text.service';
+import { TextService } from "src/app/services/text.service";
 
 @Component({
   selector: "app-header",

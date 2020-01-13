@@ -1,14 +1,14 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { ManagementModeValues } from 'src/app/enums/mode-enums';
-import { TextService } from 'src/app/services/text.service';
-import { TextItem } from 'src/app/models/TextResource.model';
-import { BooleanUtilities } from 'src/app/utilities/boolean.utilities';
-import { QuillDefaultComponent } from 'src/app/components/quill-default/quill-default.component';
+import { Component, OnInit, ViewChild } from "@angular/core";
+import { ManagementModeValues } from "src/app/enums/mode-enums";
+import { TextService } from "src/app/services/text.service";
+import { TextItem } from "src/app/models/TextResource.model";
+import { BooleanUtilities } from "src/app/utilities/boolean.utilities";
+import { QuillDefaultComponent } from "src/app/components/quill-default/quill-default.component";
 
 @Component({
-  selector: 'app-manage-text',
-  templateUrl: './manage-text.component.html',
-  styleUrls: ['./manage-text.component.scss']
+  selector: "app-manage-text",
+  templateUrl: "./manage-text.component.html",
+  styleUrls: ["./manage-text.component.scss"]
 })
 export class ManageTextComponent implements OnInit {
   @ViewChild(QuillDefaultComponent, null) public quillDefaultComponent: QuillDefaultComponent;

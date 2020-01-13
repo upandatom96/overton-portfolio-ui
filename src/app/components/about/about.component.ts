@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { TextService } from 'src/app/services/text.service';
+import { TextService } from "src/app/services/text.service";
 
 @Component({
   selector: "app-about",

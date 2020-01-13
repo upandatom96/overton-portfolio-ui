@@ -3,7 +3,7 @@ import { Router } from "@angular/router";
 import { RouterNav } from "src/app/models/Link.model";
 
 import { faHome, faLock, faEdit } from "@fortawesome/free-solid-svg-icons";
-import { AuthService } from 'src/app/services/auth.service';
+import { AuthService } from "src/app/services/auth.service";
 
 @Component({
   selector: "app-admin",

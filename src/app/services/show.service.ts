@@ -1,9 +1,9 @@
 import { Injectable } from "@angular/core";
 import { Show, ShowResource } from "../models/Show.model";
-import { HttpClient } from '@angular/common/http';
-import { RestUtilities } from '../utilities/rest.utilities';
-import { Observable } from 'rxjs';
-import { RestHelperService } from './rest-helper.service';
+import { HttpClient } from "@angular/common/http";
+import { RestUtilities } from "../utilities/rest.utilities";
+import { Observable } from "rxjs";
+import { RestHelperService } from "./rest-helper.service";
 
 @Injectable({
   providedIn: "root"

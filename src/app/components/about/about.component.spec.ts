@@ -1,10 +1,10 @@
 import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
 import { AboutComponent } from "./about.component";
-import { LoadingComponent } from 'src/app/simple-components/loading/loading.component';
-import { QuillViewComponent } from '../quill-view/quill-view.component';
-import { FaIconComponent } from '@fortawesome/angular-fontawesome';
-import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { LoadingComponent } from "src/app/simple-components/loading/loading.component";
+import { QuillViewComponent } from "../quill-view/quill-view.component";
+import { FaIconComponent } from "@fortawesome/angular-fontawesome";
+import { HttpClientTestingModule } from "@angular/common/http/testing";
 
 describe("AboutComponent", () => {
   let component: AboutComponent;

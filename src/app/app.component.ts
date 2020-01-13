@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 
 import { faLock } from "@fortawesome/free-solid-svg-icons";
-import { TextService } from './services/text.service';
+import { TextService } from "./services/text.service";
 
 @Component({
   selector: "app-root",

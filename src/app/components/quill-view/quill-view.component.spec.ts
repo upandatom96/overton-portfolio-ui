@@ -1,8 +1,8 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { QuillViewComponent } from './quill-view.component';
+import { QuillViewComponent } from "./quill-view.component";
 
-describe('QuillViewComponent', () => {
+describe("QuillViewComponent", () => {
   let component: QuillViewComponent;
   let fixture: ComponentFixture<QuillViewComponent>;
 
@@ -19,7 +19,7 @@ describe('QuillViewComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

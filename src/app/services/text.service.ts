@@ -1,12 +1,12 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { RestHelperService } from './rest-helper.service';
-import { Observable } from 'rxjs';
-import { BooleanUtilities } from '../utilities/boolean.utilities';
-import { TextResource, TextItem } from '../models/TextResource.model';
+import { Injectable } from "@angular/core";
+import { HttpClient } from "@angular/common/http";
+import { RestHelperService } from "./rest-helper.service";
+import { Observable } from "rxjs";
+import { BooleanUtilities } from "../utilities/boolean.utilities";
+import { TextResource, TextItem } from "../models/TextResource.model";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root"
 })
 export class TextService {
   private textResource: TextResource;

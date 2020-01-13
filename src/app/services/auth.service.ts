@@ -8,7 +8,7 @@ import { TokenResponse } from "../models/AuthRes.model";
 import { removeToken, saveToken, isLoggedOn } from "../utilities/token-util";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root"
 })
 export class AuthService {
 

@@ -1,9 +1,9 @@
-import { Injectable } from '@angular/core';
-import { HttpHeaders } from '@angular/common/http';
-import { getToken } from '../utilities/token-util';
+import { Injectable } from "@angular/core";
+import { HttpHeaders } from "@angular/common/http";
+import { getToken } from "../utilities/token-util";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root"
 })
 export class RestHelperService {
   private get bearerToken(): string {

@@ -3,9 +3,9 @@ import { UserLogin } from "src/app/models/Auth.model";
 import { BooleanUtilities } from "src/app/utilities/boolean.utilities";
 import { Router } from "@angular/router";
 import { faLock } from "@fortawesome/free-solid-svg-icons";
-import { AuthService } from 'src/app/services/auth.service';
-import { isLoggedOn } from 'src/app/utilities/token-util';
-import { UserService } from 'src/app/services/user.service';
+import { AuthService } from "src/app/services/auth.service";
+import { isLoggedOn } from "src/app/utilities/token-util";
+import { UserService } from "src/app/services/user.service";
 
 @Component({
   selector: "app-login",
