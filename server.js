@@ -35,6 +35,16 @@ app.use(express.static(__dirname + '/dist/overton-portfolio'));
 
 app.listen(process.env.PORT || 8080);
 
+app.get('/env', (req, res) => {
+  let environment;
+  if (process.env.ENVIRONMENT) {
+    environment = process.env.ENVIRONMENT;
+  } else {
+    environment = "TEST";
+  }
+  res.json({environment: environment});
+})
+
 // For all GET requests, send back index.html
 // so that PathLocationStrategy can be used
 
