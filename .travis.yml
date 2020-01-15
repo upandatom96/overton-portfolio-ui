@@ -11,9 +11,7 @@ branches:
   - master
 
 addons:
-  apt:
-    sources:
-      - google-chrome
+  chrome: stable
 
 cache:
   directories:
