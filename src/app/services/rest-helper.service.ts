@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { HttpHeaders } from "@angular/common/http";
 import { getToken } from "../utilities/token-util";
-import { TEST_UI_URL, PROD_UI_URL, TEST_SERVICE_URL, PROD_SERVICE_URL } from '../constants/rest-constants';
+import { TEST_UI_URL, PROD_UI_URL, TEST_SERVICE_URL, PROD_SERVICE_URL } from "../constants/rest-constants";
 
 @Injectable({
   providedIn: "root"
