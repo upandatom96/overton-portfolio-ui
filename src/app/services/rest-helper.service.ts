@@ -28,11 +28,22 @@ export class RestHelperService {
     };
   }
 
+  private get currentUrl(): string {
+    return window.location.href;
+  }
+
+  private get useProdServices(): boolean {
+    return this.currentUrl.includes(PROD_UI_URL);
+  }
+
+  private get useTestServices(): boolean {
+    return this.currentUrl.includes(TEST_UI_URL);
+  }
+
   public get baseServiceUrl(): string {
-    const url = window.location.href;
-    if (url.includes(TEST_UI_URL)) {
+    if (this.useTestServices) {
       return TEST_SERVICE_URL;
-    } else if (url.includes(PROD_UI_URL)) {
+    } else if (this.useProdServices) {
       return PROD_SERVICE_URL;
     } else {
       return TEST_SERVICE_URL;
