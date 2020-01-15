@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { HttpHeaders, HttpClient } from "@angular/common/http";
+import { HttpHeaders } from "@angular/common/http";
 import { getToken } from "../utilities/token-util";
 import { TEST_UI_URL, PROD_UI_URL, TEST_SERVICE_URL, PROD_SERVICE_URL } from '../constants/rest-constants';
 
@@ -39,12 +39,7 @@ export class RestHelperService {
     }
   }
 
-  constructor(
-    private http: HttpClient
-  ) { }
-
-  public buildRestUrl(controller): string {
-    const remoteUrl = "https://overton-services-dev.herokuapp.com/";
-    return remoteUrl + controller;
+  public buildRestUrl(controller: string): string {
+    return this.baseServiceUrl + controller;
   }
 }

@@ -6,7 +6,6 @@ import { FormsModule } from "@angular/forms";
 import { AppComponent } from "./app.component";
 import { SimpleComponentsModule } from "./simple-components/simple-components.module";
 import { HomeComponent } from "./components/home/home.component";
-import { InfoComponent } from "./components/info/info.component";
 import { NavbarComponent } from "./components/navbar/navbar.component";
 import { FooterComponent } from "./components/footer/footer.component";
 import { AppRoutingModule } from "./app-routing.module";
@@ -36,7 +35,6 @@ import { QuillViewComponent } from "./components/quill-view/quill-view.component
   declarations: [
     AppComponent,
     HomeComponent,
-    InfoComponent,
     NavbarComponent,
     FooterComponent,
     HeaderComponent,
