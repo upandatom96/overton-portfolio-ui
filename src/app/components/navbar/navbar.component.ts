@@ -1,5 +1,6 @@
 import { Component } from "@angular/core";
 import { Link } from "src/app/models/Link.model";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
 
 @Component({
   selector: "app-navbar",
@@ -7,7 +8,9 @@ import { Link } from "src/app/models/Link.model";
   styleUrls: ["./navbar.component.scss"]
 })
 export class NavbarComponent {
-  links: Link[] = [
+  public faBars = faBars;
+
+  public links: Link[] = [
     {
       text: "Home",
       routerLink: "/"
