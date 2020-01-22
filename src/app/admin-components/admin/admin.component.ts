@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
 import { RouterNav } from "src/app/models/Link.model";
 
+import { isLoggedOn } from "src/app/utilities/token-util";
 import { faHome, faLock, faEdit } from "@fortawesome/free-solid-svg-icons";
 import { AuthService } from "src/app/services/auth.service";
 
@@ -10,7 +11,7 @@ import { AuthService } from "src/app/services/auth.service";
   templateUrl: "./admin.component.html",
   styleUrls: ["./admin.component.scss"]
 })
-export class AdminComponent {
+export class AdminComponent implements OnInit {
   public faHome = faHome;
   public faLock = faLock;
   public faEdit = faEdit;
@@ -39,6 +40,17 @@ export class AdminComponent {
     private router: Router,
     private authService: AuthService,
   ) { }
+
+  public ngOnInit() {
+    this.checkLoginStatus();
+  }
+
+  private checkLoginStatus() {
+    const loggedIn = isLoggedOn();
+    if (!loggedIn) {
+      this.router.navigate(["/login"]);
+    }
+  }
 
   public toggleSidebar() {
     this.showSidebar = !this.showSidebar;
