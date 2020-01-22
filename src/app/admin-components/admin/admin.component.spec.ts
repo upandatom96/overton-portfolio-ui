@@ -4,9 +4,11 @@ import { AdminComponent } from "./admin.component";
 import { SimpleComponentsModule } from "src/app/simple-components/simple-components.module";
 import { RouterTestingModule } from "@angular/router/testing";
 import { HttpClientTestingModule } from "@angular/common/http/testing";
+import { NavHelperService } from "src/app/services/nav-helper.service";
 
 describe("AdminComponent", () => {
   let component: AdminComponent;
+  let navHelper: NavHelperService;
   let fixture: ComponentFixture<AdminComponent>;
 
   beforeEach(async(() => {
@@ -19,6 +21,8 @@ describe("AdminComponent", () => {
 
   beforeEach(() => {
     fixture = TestBed.createComponent(AdminComponent);
+    navHelper = TestBed.get(NavHelperService);
+    spyOn(navHelper, "toLogin").and.stub();
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

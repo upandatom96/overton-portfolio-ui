@@ -5,6 +5,7 @@ import { RouterNav } from "src/app/models/Link.model";
 import { isLoggedOn } from "src/app/utilities/token-util";
 import { faHome, faLock, faEdit } from "@fortawesome/free-solid-svg-icons";
 import { AuthService } from "src/app/services/auth.service";
+import { NavHelperService } from "src/app/services/nav-helper.service";
 
 @Component({
   selector: "app-admin",
@@ -39,6 +40,7 @@ export class AdminComponent implements OnInit {
   constructor(
     private router: Router,
     private authService: AuthService,
+    private navHelper: NavHelperService,
   ) { }
 
   public ngOnInit() {
@@ -48,7 +50,7 @@ export class AdminComponent implements OnInit {
   private checkLoginStatus() {
     const loggedIn = isLoggedOn();
     if (!loggedIn) {
-      this.router.navigate(["/login"]);
+      this.navHelper.toLogin();
     }
   }
 

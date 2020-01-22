@@ -1,0 +1,16 @@
+import { Injectable } from "@angular/core";
+import { Router } from "@angular/router";
+
+@Injectable({
+  providedIn: "root"
+})
+export class NavHelperService {
+
+  constructor(
+    private router: Router,
+  ) { }
+
+  public toLogin() {
+    this.router.navigate(["/login"]);
+  }
+}
